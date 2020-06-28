@@ -184,7 +184,7 @@ function twentytwenty_register_styles() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
+	// wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
 	// Add output of Customizer settings as inline style.
@@ -758,4 +758,36 @@ function twentytwenty_get_elements_array() {
 	* @param array Array of elements
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
+}
+
+// Homitska theme menu 
+$GLOBALS['menu-animation-timeout'] = 0;
+class Homitska_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+		$title = $item->title;
+		$permalink = $item->url;
+		$isParent = !$item->menu_item_parent;
+		$classNames = '';
+		
+		if($isParent) {
+			++$GLOBALS['menu-animation-timeout'];
+			$classNames = ' class="menu_link wow fadeInUp" data-wow-delay="' . $GLOBALS["menu-animation-timeout"]*0.3 . 's"';
+		}
+  
+		$output .= '<li class="' .  implode(" ", $item->classes) . '">';
+
+		if( $permalink && $permalink != '#' ) {
+			$output .= '<a href="' . $permalink . '"' . $classNames . '>' . ;
+		} else {
+			$output .= '<span>';
+		}
+
+		$output .= $title;
+
+		if( $permalink && $permalink != '#' ) {
+			$output .= '</a>';
+		} else {
+			$output .= '</span>';
+		}
+	}
 }

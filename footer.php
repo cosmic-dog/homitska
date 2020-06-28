@@ -57,5 +57,9 @@
 
 		<?php wp_footer(); ?>
 
+		<!-- Homitska stuff -->
+		<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
+		<script src="http://homitska.com/static/elga_app/js/compressed.js"></script>
+		<!-- End of Homitska stuff -->
 	</body>
 </html>
