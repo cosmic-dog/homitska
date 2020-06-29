@@ -1,0 +1,68 @@
+<?php 
+object(WP_Post)#497 (40) {
+    ["ID"]=> int(160)
+
+    ["post_author"]=> string(1) "1"
+    
+    ["post_date"]=> string(19) "2016-03-26 17:59:07"
+    ["post_date_gmt"]=> string(19) "2016-03-26 17:59:07"
+    ["post_content"]=> string(15) "Home Sweet Home"
+    ["post_title"]=> string(4) "Home"
+    ["post_excerpt"]=> string(0) ""
+    ["post_status"]=> string(7) "publish"
+    ["comment_status"]=> string(6) "closed"
+    ["ping_status"]=> string(6) "closed"
+    ["post_password"]=> string(0) ""
+    ["post_name"]=> string(4) "home"
+    ["to_ping"]=> string(0) ""
+    ["pinged"]=> string(0) ""
+    ["post_modified"]=> string(19) "2016-08-31 23:53:19"
+    ["post_modified_gmt"]=> string(19) "2016-08-31 21:53:19"
+    ["post_content_filtered"]=> string(0) ""
+    ["post_parent"]=> int(0)
+    ["guid"]=> string(33) "http://localhost/wordpress/?p=160"
+    ["menu_order"]=> int(1)
+    ["post_type"]=> string(13) "nav_menu_item"
+    ["post_mime_type"]=> string(0) ""
+    ["comment_count"]=> string(1) "0"
+    ["filter"]=> string(3) "raw"
+    ["db_id"]=> int(160)
+    ["menu_item_parent"] => string(1) "0"
+    ["object_id"]=> string(3) "160"
+    
+    ["object"]=> string(6) "custom"
+    
+    ["type"]=> string(6) "custom"
+    ["type_label"]=> string(11) "Custom Link"
+    ["title"]=> string(4) "Home"
+    
+    ["url"]=> string(27) "http://localhost/wordpress/"
+    ["target"]=>  string(0) ""
+    ["attr_title"]=> string(0) ""
+    ["description"]=> string(15) "Home Sweet Home"
+    ["classes"]=>
+    array(7) {
+      [0]=>
+      string(0) ""
+      [1]=>
+      string(9) "menu-item"
+      [2]=>
+      string(21) "menu-item-type-custom"
+      [3]=>
+      string(23) "menu-item-object-custom"
+      [4]=>
+      string(17) "current-menu-item"
+      [5]=>
+      string(17) "current_page_item"
+      [6]=>
+      string(14) "menu-item-home"
+    }
+    ["xfn"]=>
+    string(0) ""
+    ["current"]=>
+    bool(true)
+    ["current_item_ancestor"]=>
+    bool(false)
+    ["current_item_parent"]=>
+    bool(false)
+  }

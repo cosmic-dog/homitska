@@ -762,32 +762,51 @@ function twentytwenty_get_elements_array() {
 
 // Homitska theme menu 
 $GLOBALS['menu-animation-timeout'] = 0;
+
 class Homitska_Walker extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
 		$title = $item->title;
 		$permalink = $item->url;
 		$isParent = !$item->menu_item_parent;
 		$classNames = '';
-		
+		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
+				
 		if($isParent) {
 			++$GLOBALS['menu-animation-timeout'];
-			$classNames = ' class="menu_link wow fadeInUp" data-wow-delay="' . $GLOBALS["menu-animation-timeout"]*0.3 . 's"';
-		}
-  
-		$output .= '<li class="' .  implode(" ", $item->classes) . '">';
-
-		if( $permalink && $permalink != '#' ) {
-			$output .= '<a href="' . $permalink . '"' . $classNames . '>' . ;
-		} else {
-			$output .= '<span>';
+			$classNames = ' class="menu_link wow fadeInUp ' . $currentClass . '" data-wow-delay="' . $GLOBALS["menu-animation-timeout"]*0.3 . 's"';
 		}
 
-		$output .= $title;
+		if ($item->type_label != 'Language switcher') {
+	
+			$output .= '<li>';
 
-		if( $permalink && $permalink != '#' ) {
+			if( $permalink && $permalink != '#' ) {
+				$output .= '<a href="' . $permalink . '"' . $classNames . '><span>';
+			} 
+
+			$output .= $title;
+
+			if( $permalink && $permalink != '#' ) {
+				$output .= '</a></span>';
+			} 
+		}
+	}
+}
+
+class Homitska_Lang_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+		$title = $item->title;
+		$permalink = $item->url;
+		$currentClass = in_array('current-lang', $item->classes) ? 'active' : '';
+				
+		if ($item->type_label == 'Language switcher') {
+			$output .= '<li class="header_lang-li ' . $currentClass . '">';
+
+			$output .= '<a href="' . $permalink . '">';
+	
+			$output .= $title;
+
 			$output .= '</a>';
-		} else {
-			$output .= '</span>';
 		}
 	}
 }
