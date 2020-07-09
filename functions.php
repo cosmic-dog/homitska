@@ -192,7 +192,7 @@ function twentytwenty_register_styles() {
 
 	// Add print CSS.
 	wp_enqueue_style( 'twentytwenty-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
-
+	
 	wp_enqueue_style( 'twentytwenty-homitska-style', get_template_directory_uri() . '/assets/css/main.css', null, $theme_version, 'all' );
 }
 
@@ -762,6 +762,7 @@ function twentytwenty_get_elements_array() {
 
 // Homitska theme menu 
 $GLOBALS['menu-animation-timeout'] = 0;
+$GLOBALS['social-animation-timeout'] = 1;
 
 class Homitska_Walker extends Walker_Nav_Menu {
 	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
@@ -798,14 +799,26 @@ class Homitska_Lang_Walker extends Walker_Nav_Menu {
 		$title = $item->title;
 		$permalink = $item->url;
 		$currentClass = in_array('current-lang', $item->classes) ? 'active' : '';
-				
+
 		if ($item->type_label == 'Language switcher') {
 			$output .= '<li class="header_lang-li ' . $currentClass . '">';
-
 			$output .= '<a href="' . $permalink . '">';
-	
 			$output .= $title;
+			$output .= '</a>';
+		}
+	}
+}
 
+class Homitska_Social_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+		$title = $item->title;
+		$icon = 'fa fa-' . strtolower($title);
+		
+		if (!empty($title)) {
+			$GLOBALS['social-animation-timeout'] = $GLOBALS['social-animation-timeout'] + 0.2;
+			$output .= '<li class="wow fadeInDown" data-wow-delay="' . $GLOBALS['social-animation-timeout'] . 's">';
+			$output .= '<a href="' . $item->url . '" target="_blank">';
+			$output .= '<i class="' . $icon . '"></i>';
 			$output .= '</a>';
 		}
 	}

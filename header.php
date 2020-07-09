@@ -23,8 +23,9 @@
 		<?php wp_head(); ?>
 
 		<!-- Homitska stuff -->
-		<!-- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700"> -->
-		<!-- <link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css"> -->
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700">
+		<link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="http://homitska.com/static/elga_app/js/main.js"></script>
 
 	</head>
@@ -36,18 +37,25 @@
 		<!-- Homitska header -->
 		<header class="header wow fadeIn">
 			<div class="header-inner">
-				<div class="header_top-wrapper">
-					<a href="tel:+37129146982" class="header_phone  wow fadeInLeft" data-wow-delay="1.4s">(+371) 291 46982</a>
+				<div class="header-top">
+					<a href="tel:+37129146982" class="header-phone wow fadeInLeft" data-wow-delay="1.4s">(+371) 291 46982</a>
 					
+					<!-- Social menu -->
 					<div class="header_social">	
-						<a class="header_social-link" target="_blank" href="https://www.facebook.com/ELGAHOMITSKA.IMAGEHOUSE/">
-							<img src="/wp-content/themes/homitska/_website/media/upload/2017/09/13/fb_x6ZZKck.png" alt="" class="header_social-img wow fadeInDown" data-wow-delay="1.1s">
-						</a>
-						
-						<a class="header_social-link" target="_blank" href="https://www.instagram.com/elgahomitska/">
-							<img src="/wp-content/themes/homitska/_website/media/upload/2017/09/13/in_Y2stLDT.png" alt="" class="header_social-img wow fadeInDown" data-wow-delay="1.2s">
-						</a>			
+						<?php 
+							if ( has_nav_menu( 'primary' ) ) {
+								wp_nav_menu(
+									array(
+										'theme_location'=> 'social',
+										'menu_class'    => 'social-menu',
+										'container'		=> '',
+										'walker' 		=> new Homitska_Social_Walker()
+									)
+								);	
+							}
+						?>
 					</div>
+					<!-- End: social menu -->
 
 					<div class="header_lang wow fadeInDown" data-wow-delay=".9s" data-active="ru">
 						<?php 
@@ -138,7 +146,6 @@
 				</nav>
 			</div>
 		</header>
-
 		
 		<?php //get_template_part( 'template-parts/menu-search' ); ?>
 
