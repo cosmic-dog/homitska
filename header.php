@@ -24,7 +24,7 @@
 
 		<!-- Homitska stuff -->
 		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700">
-		<link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css">
+		<!-- <link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css"> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="http://homitska.com/static/elga_app/js/main.js"></script>
 
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 
-				<nav class="menu_wrapper">
+				<nav class="header-menu">
 					<?php 
 						if ( has_nav_menu( 'primary' ) ) {
 							wp_nav_menu(
@@ -104,45 +104,6 @@
 						}
 					?>
 
-
-					<!-- <a href="/wework" class="menu_link wow fadeInUp" data-wow-delay="0.3s">
-						<span class="menu_link-text">услуги стилиста</span>
-					</a>
-				
-					
-					<!-- Mobile menu -->
-					<!-- <img src="/static/elga_app/images/burger-button.jpg" class="menu_burger">
-					<div class="menu_mobile">
-						<a href="/" class="menu_mobile-link  wow fadeInUp animated" data-wow-delay="Nones" style="visibility: visible; animation-name: fadeInUp;">
-							<span class="menu_mobile-link-text">Главная</span>
-						</a>
-						
-						<a href="/wework" class="menu_mobile-link ">
-							<span class="menu_mobile-link-text">услуги стилиста</span>
-						</a>
-						<img src="/static/elga_app/images/cross.png" class="menu_mobile-cross">
-						
-						<a href="/portfolio" class="menu_mobile-link ">
-							<span class="menu_mobile-link-text">портфолио</span>
-						</a>
-						<img src="/static/elga_app/images/cross.png" class="menu_mobile-cross">
-						
-						<a href="/weteach" class="menu_mobile-link ">
-							<span class="menu_mobile-link-text">учим</span>
-						</a>
-						<img src="/static/elga_app/images/cross.png" class="menu_mobile-cross">
-						
-						<a href="/wewrite" class="menu_mobile-link ">
-							<span class="menu_mobile-link-text">пишем</span>
-						</a>
-						<img src="/static/elga_app/images/cross.png" class="menu_mobile-cross">
-						
-						<a href="/about" class="menu_mobile-link  active ">
-							<span class="menu_mobile-link-text">О НАС</span>
-						</a>
-						<img src="/static/elga_app/images/cross.png" class="menu_mobile-cross">
-					</div> -->
-					<!-- end of Mobile menu -->
 				</nav>
 			</div>
 		</header>

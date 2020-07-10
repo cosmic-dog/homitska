@@ -1,7 +1,10 @@
 @import "assets/variables";
+@import "assets/reset";
+@import "assets/fonts";
+@import "assets/animate";
 
-@import "assets/_fonts";
-@import "assets/_animate";
-@import "elements/_main";
-@import "elements/_header";
+@import "elements/elements";
+@import "elements/header";
+@import "elements/menu";
+@import "elements/social-menu";
 

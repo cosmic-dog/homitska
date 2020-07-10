@@ -1,0 +1,28 @@
+.social-menu {
+	li {
+		list-style-type: none;
+		display: inline-block;
+	}
+
+	a {
+		width: 32px;
+		height: 32px;
+		line-height: 32px;
+		position: relative;
+		border-radius: 50%;
+		font-size: 21px;
+		display: block;
+		text-align: center;
+		background: $social-icon-color;
+		color: #fff;
+		opacity: 0.9;
+	}
+
+	i {
+		letter-spacing: normal;
+	}
+
+	.fa-facebook {
+		font-size: 19px;
+	}
+}

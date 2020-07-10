@@ -774,7 +774,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 				
 		if($isParent) {
 			++$GLOBALS['menu-animation-timeout'];
-			$classNames = ' class="menu_link wow fadeInUp ' . $currentClass . '" data-wow-delay="' . $GLOBALS["menu-animation-timeout"]*0.3 . 's"';
+			$classNames = ' class="header-menu-link wow fadeInUp ' . $currentClass . '" data-wow-delay="' . $GLOBALS["menu-animation-timeout"]*0.3 . 's"';
 		}
 
 		if ($item->type_label != 'Language switcher') {
