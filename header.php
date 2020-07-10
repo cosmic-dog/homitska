@@ -107,31 +107,3 @@
 				</nav>
 			</div>
 		</header>
-		
-		<?php //get_template_part( 'template-parts/menu-search' ); ?>
-
-	
-
-		<!-- <button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-			<span class="toggle-inner">
-				<span class="toggle-icon">
-					<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
-				</span>
-				<span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
-			</span>
-		</button> -->
-
-				
-
-			
-				
-
-		<?php
-			// Output the search modal (if it is activated in the customizer).
-			if ( true === $enable_header_search ) {
-				//get_template_part( 'template-parts/modal-search' );
-			}
-				
-			// Output the menu modal.
-			//get_template_part( 'template-parts/modal-menu' );
-		?>
