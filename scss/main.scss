@@ -9,3 +9,8 @@
 @import "global/social-menu";
 @import "global/footer";
 
+@import "blocks/about";
+
+.screen-reader-text {
+    display: none;
+}

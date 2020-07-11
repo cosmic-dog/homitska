@@ -1,0 +1,33 @@
+.b-about {
+    background: #F9F9F9;
+
+    &-left, &-right {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &-left {
+        width: 46%;       
+        text-align: right;
+        padding-top: 1em;
+        background: #f2f2f2;
+        
+
+        img {
+            width: 29.3125em;
+            margin-right: -1em;
+        }
+    }
+
+    &-right {
+        padding-left: 6em;
+
+        p {
+            width: 30em;
+            margin-top: 1em;
+            font-size: 1.2em;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+    }
+}
