@@ -50,7 +50,7 @@ a {
 	
 	-webkit-text-decoration-skip: objects;
 	
-	&:hover, &:hover {
+	&:hover, &:focus {
 		text-decoration: none;
 		color: $link-hover-color
 	}

@@ -817,8 +817,24 @@ class Homitska_Social_Walker extends Walker_Nav_Menu {
 		if (!empty($title)) {
 			$GLOBALS['social-animation-timeout'] = $GLOBALS['social-animation-timeout'] + 0.2;
 			$output .= '<li class="wow fadeInDown" data-wow-delay="' . $GLOBALS['social-animation-timeout'] . 's">';
-			$output .= '<a href="' . $item->url . '" target="_blank">';
+			$output .= '<a href="' . $item->url . '" target="_blank" class="social-link">';
 			$output .= '<i class="' . $icon . '"></i>';
+			$output .= '</a>';
+		}
+	}
+}
+
+class Homitska_Footer_Walker extends Walker_Nav_Menu {
+	function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+		$title = $item->title;
+		$permalink = $item->url;
+		$isParent = !$item->menu_item_parent;
+		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
+				
+		if ($item->type_label != 'Language switcher') {
+			$output .= '<li>';
+			$output .= '<a href="' . $permalink . '">';
+			$output .= $title;
 			$output .= '</a>';
 		}
 	}

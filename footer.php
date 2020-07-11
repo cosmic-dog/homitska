@@ -12,54 +12,64 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+	<footer role="contentinfo" class="footer">
+		
+		<nav>
+			<?php 
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu(
+						array(
+							'theme_location'=> 'footer',
+							'menu_class'    => 'footer-menu',
+							'menu_id'       => 'footer-menu',
+							'container'		=> '',
+							'walker' 		=> new Homitska_Footer_Walker()
+						)
+					);	
+				}
+			?>
 
-				<div class="section-inner">
+			<ul class="footer-menu">
+				<li>
+					<span>Feedback</span>
+					<ul class="sub-menu">
+						<li>
+							<a href="tel:+37129146982">(+371) 291 46982</a>
+						</li>
+						<li>
+							<a href="mailto:elga.homitska@gmail.com">elga.homitska@gmail.com</a>
+						</li>
 
-					<div class="footer-credits">
-
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/date */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
+						<li class="footer-menu-social">
+							<?php 
+								if ( has_nav_menu( 'primary' ) ) {
+									wp_nav_menu(
+										array(
+											'theme_location'=> 'social',
+											'menu_class'    => 'social-menu',
+											'container'		=> '',
+											'walker' 		=> new Homitska_Social_Walker()
+										)
+									);	
+								}
 							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+		<p class="footer-copyright">
+			&copy; <?php echo date('Y') ?> Elga Homitska
+		</p>
 
-					</div><!-- .footer-credits -->
+	</footer>
 
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
+	<?php wp_footer(); ?>
 
-				</div><!-- .section-inner -->
-
-			</footer><!-- #site-footer -->
-
-		<?php wp_footer(); ?>
-
-		<!-- Homitska stuff -->
-		<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
-		<script src="http://homitska.com/static/elga_app/js/compressed.js"></script>
-		<!-- End of Homitska stuff -->
-	</body>
+	<!-- Homitska stuff -->
+	<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
+	<script src="http://homitska.com/static/elga_app/js/compressed.js"></script>
+	<!-- End of Homitska stuff -->
+</body>
 </html>
