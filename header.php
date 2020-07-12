@@ -23,7 +23,7 @@
 		<?php wp_head(); ?>
 
 		<!-- Homitska stuff -->
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700">
+		<!-- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700"> -->
 		<!-- <link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css"> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="http://homitska.com/static/elga_app/js/main.js"></script>

@@ -16,6 +16,7 @@
     </div>
     <div class="b-about-right">
         <h1 class="wow fadeInRight" data-wow-delay="0.1s"><?php block_field( 'heading' ); ?></h1>
+        <h4 class="lead"><?php block_field( 'lead' ); ?></h4>
         <p class="wow fadeInRight" data-wow-delay="0.2s"><?php block_field( 'text' ); ?></p>
     </div>
 </div>

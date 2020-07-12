@@ -7,14 +7,12 @@ body {
 h1, h2, h3, h4 {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
+	font-weight: 400;
 }
 
 h1 {
 	margin: 0.67em 0;
-
-	// Fix this
 	font-family: "Times", serif;
-    font-weight: 400;
     font-size: 3em;
     font-style: italic;
 }
@@ -24,6 +22,17 @@ h2 {
     letter-spacing: .35em;
     font-weight: 400;
     font-size: 3.75em;
+}
+
+h4 {
+	&.lead {
+		font-size: 1.2em;
+    	font-family: "Times It", serif;
+    	font-style: italic;
+    	margin-top: -26px;
+    	letter-spacing: 0;
+		color: $text-color-light;
+	}
 }
 
 

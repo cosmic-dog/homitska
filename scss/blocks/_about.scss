@@ -31,3 +31,49 @@
         }
     }
 }
+
+.b-about-two {
+    &-left, &-right {
+        position: relative;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &-left {
+        width: 65%;
+        text-align: right;
+        padding-top: 7em;
+        padding-right: 4em;
+
+        ul {
+            list-style: none;
+            width: 45em;
+            text-align: left;
+            display: inline-block;
+        }
+
+        li {
+            position: relative;
+            margin-top: 1.5em;
+            font-family: Roboto, sans-serif;
+            font-size: 1.05em;
+            line-height: 1.5;
+            letter-spacing: 1px;
+        }
+    }
+
+    &-right {
+        width: 35%;
+        margin-left: -7px;
+
+        background: #FAF5F6;
+
+        img {
+                position: absolute;
+                z-index: 10;
+                top: -2em;
+                left: -1em;
+        }
+    }
+}
