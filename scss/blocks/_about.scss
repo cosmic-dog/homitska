@@ -33,6 +33,8 @@
 }
 
 .b-about-two {
+    height: 46em;
+
     &-left, &-right {
         position: relative;
         height: 100%;
@@ -56,18 +58,27 @@
         li {
             position: relative;
             margin-top: 1.5em;
-            font-family: Roboto, sans-serif;
             font-size: 1.05em;
             line-height: 1.5;
             letter-spacing: 1px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -4.4em;
+                width: 2.5em;
+                height: 1px;
+                background: $text-color;
+                transform: translateY(-50%);
+            }
         }
     }
 
     &-right {
         width: 35%;
         margin-left: -7px;
-
-        background: #FAF5F6;
+        //background: linear-gradient(to top, #FAF5F6 66%, $background-color 0%); 
 
         img {
                 position: absolute;
@@ -75,5 +86,14 @@
                 top: -2em;
                 left: -1em;
         }
+    }
+
+    &-bg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 38em;
+        height: 35em;
+        background-color: #FAF5F6;
     }
 }

@@ -33,8 +33,7 @@ foreach ($textArr as $el) {
     </div>
 
     <div class="b-about-two-right">
-        <img src="<?php block_field( 'image' ); ?>" alt="Elga" class="wow fadeInRight">        
+        <img src="<?php block_field( 'image' ); ?>" alt="Elga" class="wow fadeInRight">       
+        <div class="b-about-two-bg"></div> 
     </div>
 </div>
-
-<!-- <p class="button about_second-button black_button wow fadeInUp popup__trigger" data-form="popup-consult" style="visibility: visible; animation-name: fadeInUp;">ХОЧУ НА КОНСУЛЬТАЦИЮ К ЭЛГЕ</p> -->
