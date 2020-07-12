@@ -9,7 +9,10 @@
 @import "global/social-menu";
 @import "global/footer";
 
+@import "components/forms";
+
 @import "blocks/about";
+@import "blocks/question";
 
 .screen-reader-text {
     display: none;

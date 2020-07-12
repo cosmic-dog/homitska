@@ -1,0 +1,46 @@
+.b-question {
+    &-left, &-right {
+        width: 50%;
+        height: 35em;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+
+        p {
+            letter-spacing: 1px;
+        }
+    }
+
+    &-left {
+        padding-right: 4em;
+        text-align: right;
+        
+        &-bg {
+            background: #faf5f6;
+        }
+
+        &-bga {
+            background: #f9f9f9;
+        }
+    }
+
+    &-right {
+        margin-left: -7px;
+        padding-left: 4em;
+
+        &-bg {
+            background: #f2f2f2;
+        }
+    }
+
+    &-inner {
+        width: 30em;
+        //font-size: 1.2em;
+        line-height: 1.5; // Give static line height
+        display: inline-block;
+        text-align: left;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
