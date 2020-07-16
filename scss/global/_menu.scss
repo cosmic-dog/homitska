@@ -55,13 +55,13 @@
     .sub-menu {
         width: 100%;
         opacity: .3;
-        background: $background-color;
+        background: $bg-color;
         position: absolute;
         bottom: 0;
         transform-origin: top center;
         transform: translateY(100%) scaleY(0);
         transition: all 0.2s linear;
-
+    
         li {
             display: block;
             text-align: left;

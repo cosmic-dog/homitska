@@ -4,20 +4,16 @@
  *
  * Used for both singular and index.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * 
  * @package WordPress
  * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @since Homitska 1.0
  */
 
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-	<div class="entry-content">
-		<?php
-		
-			the_content( __( 'Continue reading', 'twentytwenty' ) );
-		?>
-	</div>
-</article>
+<div id="post-<?php the_ID(); ?>" class="content <?php echo implode(' ', Get_post_class());  ?>">
+	<?php	
+		the_content( __( 'Continue reading', 'twentytwenty' ) );
+	?>
+</div>

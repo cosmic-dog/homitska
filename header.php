@@ -85,8 +85,8 @@
 					<a href="/" class="header_logo-mobile">
 						<img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img">
 					</a>
-					<div class="header_button-wrapper">
-						<div class="button header_button wow fadeInRight clearfix popup__trigger" data-form="popup-client" data-wow-delay="1.4s">Стать клиентом</div>
+					<div class="header-btn-wrap">
+						<button class="trans wow fadeInRight" data-wow-delay="1.4s"><span>Связаться с нами</span></button>
 					</div>
 				</div>
 

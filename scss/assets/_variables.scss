@@ -1,4 +1,4 @@
-$background-color: #fff;
+$bg-color: #fff;
 $footer-bg-color: #fcfcfc;
 
 $text-color: #333;
@@ -11,3 +11,6 @@ $link-hover-color-light: darken($text-color-light, 20%);
 $social-icon-color: #444;
 
 $border-color: #d6d6d6;
+
+$btn-bg: $text-color;
+$btn-bg-trans: $bg-color;

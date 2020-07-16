@@ -9,7 +9,7 @@
  */
 ?>
 
-<div class="b-question">
+<div class="block b-question">
     <h2 class="wow fadeInDown"><?php block_field( 'heading' ); ?></h2>
 
     <div class="b-question-left b-question-left-bg">

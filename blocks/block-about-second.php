@@ -24,7 +24,7 @@ foreach ($textArr as $el) {
 }
 ?>
 
-<div class="b-about-two">
+<div class="block b-about-two">
     <div class="b-about-two-left">
        <ul>
             <?php echo $html; ?>

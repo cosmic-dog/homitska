@@ -1,0 +1,61 @@
+button, .btn {
+    position: relative;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 500;
+    border: 1px solid $text-color; //proper variable
+    padding: 0 6.5em;
+    line-height: 4.5;
+    text-transform: uppercase;
+    font-size: .7em;
+    cursor: pointer;
+    
+    &:not(.trans) {
+        color: $bg-color;
+        background: $btn-bg;
+
+        &:after {
+            background: $bg-color;
+        }
+
+        &:hover {
+            color: $text-color;
+        }
+    }
+
+    &.trans {
+        color: $text-color;
+        background: $btn-bg-trans;
+
+        &:after {
+            background: $btn-bg;
+        }
+
+        &:hover {
+            color: $bg-color;
+        }
+    }
+
+
+    span {
+        position: relative;
+        z-index: 5;
+    }
+
+    &:after {
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        transition: all ease-in-out .3s;
+    }
+
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}

@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main class="main" role="main">
 	<?php
 		if ( have_posts() ) {
 			while ( have_posts() ) {
@@ -22,7 +22,6 @@ get_header();
 			}
 		}
 	?>
-
 </main>
 
 <?php get_footer(); ?>
