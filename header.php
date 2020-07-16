@@ -86,7 +86,7 @@
 						<img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img">
 					</a>
 					<div class="header-btn-wrap">
-						<button class="trans wow fadeInRight" data-wow-delay="1.4s"><span>Связаться с нами</span></button>
+						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s"><span>Связаться с нами</span></button>
 					</div>
 				</div>
 

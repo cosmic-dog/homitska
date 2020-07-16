@@ -1,0 +1,3 @@
+@mixin btn-animation($time: .3s) {
+    transition: all linear $time;
+}
