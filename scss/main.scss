@@ -13,10 +13,15 @@
 @import "components/forms";
 @import "components/buttons";
 
+@import "blocks/main";
 @import "blocks/about";
 @import "blocks/question";
 @import "blocks/map";
 
 .screen-reader-text {
     display: none;
+}
+
+.wow {
+    visibility: hidden;
 }

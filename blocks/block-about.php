@@ -12,7 +12,7 @@
 
 <div class="block b-about">
     <div class="b-about-left">
-        <img src="<?php block_field( 'image' ); ?>" alt="<?php block_field( 'heading' ); ?>">
+        <img class="wow fadeInLeft" src="<?php block_field( 'image' ); ?>" alt="<?php block_field( 'heading' ); ?>" data-wow-delay="0.2s">
     </div>
     <div class="b-about-right">
         <h1 class="wow fadeInRight" data-wow-delay="0.1s"><?php block_field( 'heading' ); ?></h1>
