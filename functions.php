@@ -817,7 +817,7 @@ class Homitska_Social_Walker extends Walker_Nav_Menu {
 		if (!empty($title)) {
 			$GLOBALS['social-animation-timeout'] = $GLOBALS['social-animation-timeout'] + 0.2;
 			$output .= '<li class="wow fadeInDown" data-wow-delay="' . $GLOBALS['social-animation-timeout'] . 's">';
-			$output .= '<a href="' . $item->url . '" target="_blank" class="social-link">';
+			$output .= '<a href="' . $item->url . '" target="_blank" class="social-link h-icon">';
 			$output .= '<i class="' . $icon . '"></i>';
 			$output .= '</a>';
 		}

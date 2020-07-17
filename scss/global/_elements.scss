@@ -12,9 +12,21 @@ h1, h2, h3, h4 {
 
 h1 {
 	margin: 0.67em 0;
-	font-family: "Times", serif;
     font-size: 3em;
-    font-style: italic;
+
+	&:not(.alt) {
+		font-family: "Times", serif;
+		font-style: italic;
+	}
+
+	&.alt {
+		margin-left: -1px;
+		font-family: "Proxima thin", sans-serif;
+	}
+	
+	a:hover, a:focus {
+		color: $text-color-light;
+	}
 }
 
 h2 {

@@ -1,0 +1,57 @@
+.h-icon {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	position: relative;
+	border-radius: 50%;
+	font-size: 21px;
+	display: block;
+	text-align: center;
+	background: $social-icon-bg;
+	color: #fff;
+	opacity: 0.9;
+
+	&-small {
+		width: 26px;
+		height: 26px;
+		line-height: 27px;
+		font-size: 18px;
+	}
+
+	&-more {
+    	margin-left: 10px;
+		display: inline-block;
+    	vertical-align: middle;
+	}
+
+
+	&:before {
+		content: '';
+		background: $bg-color;
+		border-radius: 50%;
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		bottom: 1px;
+		left: 33px;
+		@include btn-animation(.2s);
+	}
+
+	&:hover {
+		color: $social-icon-bg;
+		
+		&:before {
+			left: 1px;
+		}
+	}
+
+	i {
+		letter-spacing: normal;
+		position: relative;
+		z-index: 5;
+	}
+
+	.fa-facebook {
+		font-size: 19px;
+	}
+}
