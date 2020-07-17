@@ -1,8 +1,9 @@
-$bg-color: #fff;
-$footer-bg-color: #fcfcfc;
-
 $text-color: #333;
 $text-color-light: #a7a7a7;
+
+$bg-color: #fff;
+$footer-bg-color: $text-color;  //#fcfcfc;
+
 
 $link-color: #888;
 $link-hover-color: $text-color;
