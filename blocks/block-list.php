@@ -12,20 +12,22 @@ $text = block_field( 'text', false );
 $text = str_replace('<p>', '', $text);
 $textArr = explode('</p>', $text);
 $html = '';
-$liIndex = 0.2;
+
+$delayValue = block_field( 'animation-delay', false );
+$delay = !empty($delayValue) ? $delayValue : 0;
 
 array_pop($textArr);
 
 foreach ($textArr as $el) {
-    $html .= '<li class="wow fadeInLeft" data-wow-delay="' . $liIndex . 's">';
+    $html .= '<li class="wow ' . block_field('animation', false) . '" data-wow-delay="' . $delay . 's">';
     $html .= $el;
     $html .= '</li>';
-    $liIndex = $liIndex + 0.2;
+    $delay = $delay + 0.2;
 }
 ?>
 
 <div class="block b-list">
-    <ul class="h-list">
+    <ul class="h-list <?php echo block_value('className'); ?>">
         <?php echo $html; ?>
     </ul> 
 </div>

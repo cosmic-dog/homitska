@@ -63,6 +63,14 @@ h4 {
 p {
 	line-height: $line-height;
 	margin-bottom: 24px;
+
+	&.less-margin {
+		margin-bottom: 10px;
+	}
+
+	&.bold {
+		font-weight: 500;
+	}
 }
 
 a {
