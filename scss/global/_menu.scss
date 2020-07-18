@@ -24,11 +24,15 @@
 		text-transform: uppercase;
 		font-size: .9em;
 		padding: 0 4.3em;
-		letter-spacing: 1px;	
     }
 
     a {
         color:$text-color-light;
+        letter-spacing: 2px;
+        
+        span {
+            letter-spacing: inherit;    
+        }
 
         &.active span {
             position: relative;

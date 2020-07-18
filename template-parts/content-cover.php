@@ -14,7 +14,7 @@ if ( $imageUrl ) {
 }
 ?>
 
-<div id="post-<?php the_ID(); ?>" class="content <?php echo implode(' ', Get_post_class());  ?>">
+<div id="post-<?php the_ID(); ?>" class="content-cover <?php echo implode(' ', Get_post_class());  ?>">
 	<div class="cover" <?php echo $coverStyle; ?>></div>
 
 	<?php	

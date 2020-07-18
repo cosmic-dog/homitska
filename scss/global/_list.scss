@@ -1,0 +1,35 @@
+.h-list {
+    list-style-type: none;
+    text-align: left;
+
+    li {
+        position: relative;
+        line-height: $line-height;
+        margin-bottom: 24px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            background: $text-color;
+            transform: translateY(-50%);
+        }
+    }
+
+    &-outside {
+        li:before {
+            width: 2.5em;
+            left: -4.4em;
+        }
+    }
+
+    &:not(.h-list-outside) {
+        padding-left: 40px;
+
+        li:before {
+            width: 20px;
+            left: -40px;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Block for displaying About second section
+ * Block for displaying List
  *
  *
  * @package WordPress
@@ -24,16 +24,8 @@ foreach ($textArr as $el) {
 }
 ?>
 
-<div class="block b-about-two">
-    <div class="b-about-two-left">
-       <ul class="h-list h-list-outside">
-            <?php echo $html; ?>
-        </ul> 
-        
-    </div>
-
-    <div class="b-about-two-right">
-        <img src="<?php block_field( 'image' ); ?>" alt="Elga" class="wow fadeInRight">       
-        <div class="b-about-two-bg"></div> 
-    </div>
+<div class="block b-list">
+    <ul class="h-list">
+        <?php echo $html; ?>
+    </ul> 
 </div>

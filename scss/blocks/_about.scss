@@ -27,7 +27,6 @@
             margin-top: 1em;
             font-size: 1.2em;
             line-height: 1.6;
-            letter-spacing: 1px;
         }
     }
 }
@@ -45,33 +44,12 @@
     &-left {
         width: 65%;
         text-align: right;
-        padding-top: 7em;
+        padding-top: 7.6em;
         padding-right: 4em;
 
         ul {
-            list-style: none;
             width: 45em;
-            text-align: left;
             display: inline-block;
-        }
-
-        li {
-            position: relative;
-            margin-top: 1.5em;
-            font-size: 1.05em;
-            line-height: 1.5;
-            letter-spacing: 1px;
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: -4.4em;
-                width: 2.5em;
-                height: 1px;
-                background: $text-color;
-                transform: translateY(-50%);
-            }
         }
     }
 

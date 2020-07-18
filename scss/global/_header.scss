@@ -34,10 +34,10 @@
 		position: relative;
 		padding-left: 1.9em;
 		width: 12.5em;
-		font-family: Roboto, sans-serif;
 		font-weight: 500;
-		color: #020202;
 		white-space: nowrap;
+		letter-spacing: 2px;
+
 		&:before {
 			content: "";
 			position: absolute;
@@ -65,9 +65,8 @@
 	&_lang {
 		position: relative;
 		padding-left: 1.9em;
-		font-family: Roboto, sans-serif;
-		font-weight: 400;
 		width: 6em;
+
 		> * {
 			display: inline-block;
 			vertical-align: middle;
@@ -134,17 +133,13 @@
 		}
 
 		&-caption {
-			display: block;
-			margin: auto;
+			margin: 0;
 			margin-top: -1.8em;
-			font-family: Roboto, sans-serif;
-			font-weight: 400;
+			line-height: inherit;
 			text-transform: uppercase;
 			font-size: .8em;
 			letter-spacing: 4px;
 			color: #666;
-			overflow: hidden;
-			height: 1em;
 			transition: all linear .5s;
 		}
 		&-mobile {
