@@ -25,6 +25,10 @@ input[type=text], input[type=email], input[type=tel], input[type=number], input[
     color: $text-color;
     font-size: 16px;
     text-align: left;
+
+    &.wpcf7-not-valid {
+        border-bottom-color: $error-color;
+    }
 }
 
 input[type=checkbox] {
@@ -33,9 +37,16 @@ input[type=checkbox] {
     display: inline-block;
     vertical-align: middle;
 
-    & + label {
+    & + label, & + span {
         display: inline-block;
         vertical-align: middle;
-        margin: 2px 0 0 10px;
+        margin: 3px 0 0 12px;
     }
+}
+
+span.wpcf7-list-item {
+    margin: 0;
+}
+div.wpcf7 .ajax-loader  {
+    margin-right: -20px;
 }

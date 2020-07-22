@@ -7,7 +7,7 @@ button, .btn {
     display: inline-block;
     font-family: inherit;
     font-weight: 500;
-    border: 1px solid $text-color; //proper variable
+    border: 1px solid $btn-bg;
     padding: 0 5em;
     line-height: 4;
     letter-spacing: 2px;
@@ -23,7 +23,7 @@ button, .btn {
             background: $bg-color;
         }
 
-        &:hover {
+        &:not([disabled]):hover {
             color: $text-color;
         }
     }
@@ -36,9 +36,13 @@ button, .btn {
             background: $btn-bg;
         }
 
-        &:hover {
+        &:not([disabled]):hover {
             color: $bg-color;
         }
+    }
+
+    &[disabled] {
+        opacity: .7;
     }
 
     &-small {
@@ -70,3 +74,12 @@ button, .btn {
         }
     }
 }
+
+input[type=submit] {
+    @include btn-animation;
+    
+    &:not([disabled]):hover {
+        color: $text-color;
+        background: $bg-color;
+    }
+} 
