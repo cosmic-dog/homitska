@@ -1,0 +1,26 @@
+.psac-post-carousel.psac-design-1  {
+    .psac-post-title {
+        font-size: 2.5em ;
+
+        a:hover {
+            color: $link-hover-color;
+        }
+    }
+
+    .psac-post-content {
+        width: 100%;
+        height: 60px;
+        color: #fff;
+        padding: 0 40px;
+        display: table;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .psac-post-short-content {
+        margin-bottom: 0;
+        display: table-cell;
+        vertical-align: top;
+        line-height: 1.6;
+    }
+}

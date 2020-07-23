@@ -23,7 +23,7 @@
 ?>
 
 <div class="block b-map">
-    <h2><?php block_field( 'heading' ); ?></h2>
+    <h2 class="bg-alt wow fadeInUp" data-wow-delay="0.5s"><?php block_field( 'heading' ); ?></h2>
     
     <div id="map"></div>
 </div>
