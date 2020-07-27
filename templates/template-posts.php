@@ -31,7 +31,7 @@ get_header();
 
 					<div class="b-main-b">
 						<div>
-							<h1 class="alt wow fadeInRight" data-wow-delay="0.1s">
+							<h1 class="wow fadeInRight" data-wow-delay="0.1s">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h1>
 				

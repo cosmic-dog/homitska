@@ -25,11 +25,11 @@
     <div class="b-main-b">
         <div>
             <?php if ($hasLink) { ?>
-                <h1 class="alt wow fadeInRight" data-wow-delay="0.1s">
+                <h1 class="wow fadeInRight" data-wow-delay="0.1s">
                     <a href="<?php block_field( 'url' ); ?>"><?php block_field( 'heading' ); ?></a>
                 </h1>
             <?php } else { ?>
-                <h1 class="alt wow fadeInRight" data-wow-delay="0.1s"><?php block_field( 'heading' ); ?></h1>
+                <h1 class="wow fadeInRight" data-wow-delay="0.1s"><?php block_field( 'heading' ); ?></h1>
             <?php } ?>
             
             <?php if (!empty(block_field( 'lead', false ))) {  ?>

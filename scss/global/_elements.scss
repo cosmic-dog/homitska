@@ -11,30 +11,38 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	margin: 0.67em 0;
-	font-size: 3em;
-	letter-spacing: 2px;
-
+	padding-bottom: $h-padding-bottom;
+	font-size: 3.2em;
+	
 	&:not(.alt) {
+		margin-left: -1px;
+		letter-spacing: .25em;
+		font-family: "Proxima thin", sans-serif;
+	}
+
+	&.alt {
+		letter-spacing: 3px;
 		font-family: "Times", serif;
 		font-style: italic;
 	}
 
-	&.alt {
-		margin-left: -1px;
-		font-family: "Proxima thin", sans-serif;
+	&.ptop {
+		padding-top: $h-padding-top;
 	}
 	
-	a:hover, a:focus {
-		color: $text-color-light;
+	a {
+		letter-spacing: .17em;
+		&:hover, &:focus {
+			color: $text-color-light;
+		}
 	}
 }
 
 h2 {
 	margin: 0;
-	padding: 1.4em 0 .7em 0;
+	padding: $h-padding-top 0 $h-padding-bottom 0;
 	font-family: "Proxima thin", sans-serif;
-    letter-spacing: .35em;
+    letter-spacing: .25em;
     font-weight: 400;
 	font-size: 3em;
 	text-align: center;
@@ -53,8 +61,6 @@ h3 {
 }
 
 h4 {
-
-
 	&.lead {
 		font-size: 1.2em;
     	font-family: "Times It", serif;
@@ -75,6 +81,10 @@ p {
 
 	&.bold {
 		font-weight: 500;
+	}
+
+	& + h2 {
+		margin-top: -24px;
 	}
 }
 
