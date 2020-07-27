@@ -12,8 +12,7 @@
 ?>
 
 <div class="block b-main" style="background: <?php block_field( 'bg-color' ); ?>">
-    
-<div class="b-main-a" style="background: <?php block_field( 'image-bg-color' ); ?>">
+    <div class="b-main-a" style="background: <?php block_field( 'image-bg-color' ); ?>">
         <?php if ($hasLink) { ?>
             <a href="<?php block_field( 'url' ); ?>">
                 <img class="wow fadeInLeft" src="<?php block_field( 'image' ); ?>" alt="<?php block_field( 'heading' ); ?>" data-wow-delay="0.2s">
@@ -46,5 +45,4 @@
             </p>
         </div>
     </div>
-    <!-- <div style="clear: both;"></div> -->
 </div>

@@ -71,11 +71,8 @@
 	<?php wp_footer(); ?>
 
 	<!-- Homitska stuff -->
-	
-
 	<script src="http://homitska.com/static/elga_app/js/compressed.js"></script>
 	<script src="/wp-content/themes/homitska/assets/js/main.js"></script>
-	//
 	<!-- End of Homitska stuff -->
 </body>
 </html>

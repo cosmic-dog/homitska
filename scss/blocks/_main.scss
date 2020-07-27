@@ -26,9 +26,12 @@
     }
 
     &:nth-child(odd) {
+        background: #f9f9f9;
+
         .b-main-a {
             text-align: right;
             float: left;
+            background: #f2f2f2;
 
             img {
                 margin-right: -10px;
@@ -42,9 +45,12 @@
     }
 
     &:nth-child(even) {
+        background: #faf5f6;
+
         .b-main-a {
             text-align: left;
             float: right;
+            background: #f2f2f2;
 
             img {
                 margin-left: -10px;
