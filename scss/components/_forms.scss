@@ -14,9 +14,8 @@ label {
     margin-bottom: 3px;
 }
 
-input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password] {
-    width: 30em;
-    text-align: center;
+input[type=text], input[type=email], input[type=tel], input[type=number], input[type=password], textarea {
+    width: 100%;
     font-family: inherit;
     border: 0;
     border-bottom: 1px solid $border-color;
@@ -26,9 +25,19 @@ input[type=text], input[type=email], input[type=tel], input[type=number], input[
     font-size: 16px;
     text-align: left;
 
-    &.wpcf7-not-valid {
+    &:focus {
+        outline: none;
+        border-bottom-color: $text-color;
+    }
+
+    &.not-valid, &.wpcf7-not-valid {
         border-bottom-color: $error-color;
     }
+}
+
+textarea {
+    height: 52px;
+    resize: none;
 }
 
 input[type=checkbox] {
@@ -43,6 +52,44 @@ input[type=checkbox] {
         margin: 3px 0 0 12px;
     }
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+
+    &.tcode, &.tnumber {
+        display: inline-block;
+    }
+    
+    &.tcode {
+        width: 62px;
+        padding-left: 16px;
+    }
+    
+    &.tnumber {
+        width: calc(100% - 70px);
+        margin-left: 8px;
+    }
+}
+
+.twrap {
+    position: relative;
+
+    &:before {
+        content: '+';
+        color: $text-color-light;
+        position: absolute;
+        top: 0;
+        left: 4px;
+        z-index: 2;
+    }
+}
+
 
 span.wpcf7-list-item {
     margin: 0;

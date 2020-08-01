@@ -8,14 +8,14 @@ $bg-color-pink-grey: #FAF5F6;
 $footer-bg-color: $text-color;  //#fcfcfc;
 
 $link-color: #888;
-$link-hover-color: $text-color-light;
+$link-hover-color: $text-color;
 $link-hover-color-light: darken($text-color-light, 20%);
 
 $social-icon-bg: #444;
 
 $border-color: #d6d6d6;
 
-$error-color: red;
+$error-color: #ff0000;
 
 $btn-bg: $text-color;
 $btn-bg-trans: $bg-color;

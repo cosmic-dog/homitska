@@ -71,6 +71,10 @@ h4 {
 	}
 }
 
+h5 {
+	padding: 18px 0 14px;
+}
+
 p {
 	line-height: $line-height;
 	margin-bottom: 24px;
@@ -90,7 +94,7 @@ p {
 
 a {
 	text-decoration: none;
-	color: $text-color;
+	color: $link-color;
 	background-color: transparent;
 	@include btn-animation;
 	-webkit-text-decoration-skip: objects;
@@ -98,6 +102,14 @@ a {
 	&:hover, &:focus {
 		text-decoration: none;
 		color: $link-hover-color;
+	}
+}
+
+label a {
+	color: $text-color;
+
+	&:hover, &:focus {
+		color: $text-color-light;
 	}
 }
 
