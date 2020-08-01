@@ -1,5 +1,5 @@
 .b-about {
-    background: #F9F9F9;
+    background: $bg-color-lighter-grey;
 
     &-left, &-right {
         display: inline-block;
@@ -10,7 +10,7 @@
         width: 46%;       
         text-align: right;
         padding-top: 1em;
-        background: #f2f2f2;
+        background: $bg-color-light-grey;
         
 
         img {
@@ -56,7 +56,7 @@
     &-right {
         width: 35%;
         margin-left: -7px;
-        //background: linear-gradient(to top, #FAF5F6 66%, $bg-color 0%); 
+        //background: linear-gradient(to top, $bg-color-pink-grey 66%, $bg-color 0%); 
 
         img {
                 position: absolute;
@@ -72,6 +72,6 @@
         right: 0;
         width: 38em;
         height: 30em;
-        background-color: #FAF5F6;
+        background-color: $bg-color-pink-grey;
     }
 }

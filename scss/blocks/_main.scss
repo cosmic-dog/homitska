@@ -26,12 +26,12 @@
     }
 
     &:nth-child(odd) {
-        background: #f9f9f9;
+        background: $bg-color-lighter-grey;
 
         .b-main-a {
             text-align: right;
             float: left;
-            background: #f2f2f2;
+            background: $bg-color-light-grey;
 
             img {
                 margin-right: -10px;
@@ -45,12 +45,12 @@
     }
 
     &:nth-child(even) {
-        background: #faf5f6;
+        background: $bg-color-pink-grey;
 
         .b-main-a {
             text-align: left;
             float: right;
-            background: #f2f2f2;
+            background: $bg-color-light-grey;
 
             img {
                 margin-left: -10px;
@@ -66,9 +66,5 @@
                 text-align: left;
             }
         }
-    }
-
-    &:last-child {
-        //margin-bottom: 12px;
     }
 }
