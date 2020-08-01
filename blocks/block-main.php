@@ -39,7 +39,7 @@
             <p class="wow fadeInRight" data-wow-delay="0.5s"><?php block_field( 'text' ); ?> 
                 <?php if ($hasLink) { ?>
                     <a href="<?php block_field( 'url' ); ?>" class="h-icon h-icon-small h-icon-more">
-                        <i class="fa fa-arrow-circle-right"></i>
+                        <i class="fa  fa-arrow-right"></i>
                     </a>
                 <?php } ?>
             </p>

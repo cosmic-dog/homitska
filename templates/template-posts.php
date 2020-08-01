@@ -38,7 +38,7 @@ get_header();
 							<p class="wow fadeInRight" data-wow-delay="0.5s">
 								<?php echo get_the_excerpt(); ?> 
 								<a href="<?php the_permalink(); ?>" class="h-icon h-icon-small h-icon-more">
-									<i class="fa fa-arrow-circle-right"></i>
+									<i class="fa fa-arrow-right"></i>
 								</a>
 							</p>
 						</div>
