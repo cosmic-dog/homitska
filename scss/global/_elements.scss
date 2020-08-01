@@ -13,6 +13,7 @@ h1, h2, h3, h4 {
 h1 {
 	padding-bottom: $h-padding-bottom;
 	font-size: 3.2em;
+	line-height: 1;
 	
 	&:not(.alt) {
 		margin-left: -1px;
@@ -61,6 +62,8 @@ h3 {
 }
 
 h4 {
+	padding-bottom: 1.2em;
+
 	&.lead {
 		font-size: 1.2em;
     	font-family: "Times It", serif;

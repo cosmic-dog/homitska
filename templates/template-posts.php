@@ -13,15 +13,16 @@ get_header();
 
 <main class="main" role="main">
 	<?php
-		$catObj = get_category_by_slug('portfolio-' . ICL_LANGUAGE_CODE);
+		$catObj = get_category_by_slug(get_post_meta(get_the_ID(), 'category', true));
 		$catID = $catObj->term_id;
 
-		$lastposts = get_posts(array(
+		$posts = get_posts(array(
+			'numberposts' => 0,
 			'category' => $catID
 		));
 	 
-		if ( $lastposts ) {
-			foreach ($lastposts as $post) : ?>
+		if ($posts) {
+			foreach ($posts as $post) : ?>
 				<div class="block b-main">
 					<div class="b-main-a">
 						<a href="<?php block_field( 'url' ); ?>">
@@ -34,6 +35,7 @@ get_header();
 							<h1 class="wow fadeInRight" data-wow-delay="0.1s">
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 							</h1>
+							<h4 class="lead">Все, что хотите знать о стиле. Доступно Онлайн</h4>
 				
 							<p class="wow fadeInRight" data-wow-delay="0.5s">
 								<?php echo get_the_excerpt(); ?> 
@@ -51,14 +53,14 @@ get_header();
 			wp_reset_postdata();
 		}
 
-		if ( have_posts() ) {
+		// if ( have_posts() ) {
 
-			while ( have_posts() ) {
-				the_post();
+		// 	while ( have_posts() ) {
+		// 		the_post();
 
-				get_template_part( 'template-parts/content' );
-			}
-		}
+		// 		get_template_part( 'template-parts/content' );
+		// 	}
+		// }
 	?>
 </main>
 
