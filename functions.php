@@ -829,13 +829,36 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 		$title = $item->title;
 		$permalink = $item->url;
 		$isParent = !$item->menu_item_parent;
+		$isSocialMenu = $permalink == '#social-menu';
 		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
 				
 		if ($item->type_label != 'Language switcher') {
-			$output .= '<li>';
-			$output .= '<a href="' . $permalink . '">';
-			$output .= $title;
-			$output .= '</a>';
+			if ($isSocialMenu) 
+				$output .= '<li class="footer-menu-social">';
+			else 
+				$output .= '<li>';
+			
+			if ($permalink == '#') {
+				$output .= '<span>';
+				$output .= $title;
+				$output .= '</span>';
+			}
+			else if ($isSocialMenu) {
+				$output .= wp_nav_menu(
+					array(
+						'echo' => false,
+						'theme_location'=> 'social',
+						'menu_class'    => 'social-menu',
+						'container'		=> '',
+						'walker' 		=> new Homitska_Social_Walker()
+					)
+				);	
+			}
+			else {
+				$output .= '<a href="' . $permalink . '">';
+				$output .= $title;
+				$output .= '</a>';
+			}
 		}
 	}
 }

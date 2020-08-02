@@ -26,6 +26,7 @@
     }
 
     &-menu  {
+        position: relative;
         display: inline-block;
 
         & > li {
@@ -37,6 +38,19 @@
             & > a, span {
                 text-transform: uppercase;
                 font-weight: 500;
+            }
+
+            &:first-child {
+                position: absolute;
+            }
+
+            &:nth-child(2) {
+                position: absolute;
+                top: 56px;
+            }
+
+            &:nth-child(3) {
+                margin-top: 112px;
             }
         }
     }

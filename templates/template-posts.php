@@ -15,14 +15,16 @@ get_header();
 	<?php
 		$catObj = get_category_by_slug(get_post_meta(get_the_ID(), 'category', true));
 		$catID = $catObj->term_id;
-
+		
 		$posts = get_posts(array(
 			'numberposts' => 0,
 			'category' => $catID
 		));
 	 
 		if ($posts) {
-			foreach ($posts as $post) : ?>
+			foreach ($posts as $post) : 
+				$lead = get_post_meta($post->ID, 'lead', true);	?>
+
 				<div class="block b-main">
 					<div class="b-main-a">
 						<a href="<?php block_field( 'url' ); ?>">
@@ -33,9 +35,13 @@ get_header();
 					<div class="b-main-b">
 						<div>
 							<h1 class="wow fadeInRight" data-wow-delay="0.1s">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
 							</h1>
-							<h4 class="lead">Все, что хотите знать о стиле. Доступно Онлайн</h4>
+
+							<?php 
+								if (!empty($lead))
+									echo "<h4 class=\"lead wow fadeInRight\" data-wow-delay=\"0.3s\">$lead</h4>";
+							?>
 				
 							<p class="wow fadeInRight" data-wow-delay="0.5s">
 								<?php echo get_the_excerpt(); ?> 
