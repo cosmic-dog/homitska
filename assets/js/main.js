@@ -46,10 +46,13 @@ H.formValidation = (function() {
             tcode = tcodeInput.val(),
             tnumber = tnumberInput.val();
             
-        if ((tcode && !tnumber) || (!tcode && tnumber)) {
+        if (tcode && !tnumber) {
+            event.preventDefault();
+            tnumberInput.addClass('not-valid');
+        }
+        else if (!tcode && tnumber) {
             event.preventDefault();
             tcodeInput.addClass('not-valid');
-            tnumberInput.addClass('not-valid');
         }
         else {
             tcodeInput.removeClass('not-valid');
@@ -68,6 +71,11 @@ H.formValidation = (function() {
 
 H.modal.init();
 H.formValidation.init();
+
+$(document).ready(() => {
+    let title = $('h1').first().text();
+    $('.ctopic-hidden').val(title)
+});
 
 
 

@@ -66,9 +66,11 @@
 	</footer>
 
 	<div class="overlay"></div>
-
-
-	<?php wp_footer(); ?>
+	
+	<?php 
+		get_template_part( 'template-parts/modals' );
+		wp_footer(); 
+	?>
 
 	<!-- Homitska stuff -->
 	<script src="http://homitska.com/static/elga_app/js/compressed.js"></script>

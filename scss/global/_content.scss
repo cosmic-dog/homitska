@@ -6,6 +6,26 @@
     background-repeat: no-repeat;
     background-size: cover;
     //background-attachment: fixed;
+
+    &:before {
+        content: '';
+        background: $bg-color-lighter-grey;
+        opacity: .6;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -3px;
+        left: 0;
+        z-index: 2;
+    }
+
+    .title-wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .middle, .wp-block-group {
