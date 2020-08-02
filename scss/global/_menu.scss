@@ -29,6 +29,7 @@
     a {
         color:$text-color-light;
         letter-spacing: 2px;
+        white-space: nowrap;
         
         span {
             letter-spacing: inherit;    

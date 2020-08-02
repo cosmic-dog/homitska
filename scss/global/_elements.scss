@@ -2,6 +2,10 @@ body {
 	font: 400 16px Roboto, sans-serif;
 	color: $text-color;
 	text-align: left;
+
+	&.sticky {
+		padding-top: 100px;
+	}
 }
 
 h1, h2, h3, h4 {

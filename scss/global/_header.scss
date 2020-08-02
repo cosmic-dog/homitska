@@ -151,6 +151,39 @@
 	&-btn-wrap {
 		text-align: right;
 	}
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+
+		* {
+			transition: all ease-in-out .3s;
+		}
+
+		.header-top {
+			padding: 8px 0;
+		}
+
+		.header-menu>ul>li {
+			padding: 8px 0;
+		}
+
+		.header_logo {
+			&-svg {
+				height: 3em;
+				transform: translateY(6px);
+			}
+
+			&-caption, &-line {
+				display: none;
+			}
+		}
+
+		.btn-small {
+			line-height: 3;
+			padding: 0 2em;
+		}
+	}
 }
 
 

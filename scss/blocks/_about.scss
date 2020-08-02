@@ -58,6 +58,7 @@
         //background: linear-gradient(to top, $bg-color-pink-grey 66%, $bg-color 0%); 
 
         img {
+                max-height: 100%;
                 position: absolute;
                 z-index: 10;
                 top: -2em;
