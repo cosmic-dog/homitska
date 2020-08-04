@@ -38,9 +38,15 @@ get_header();
 								<a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
 							</h1>
 
-							<?php 
-								if (!empty($lead))
-									echo "<h4 class=\"lead wow fadeInRight\" data-wow-delay=\"0.3s\">$lead</h4>";
+							<?php 								
+								if (has_blocks( $post->post_content )) {
+									$blocks = parse_blocks( $post->post_content );
+									$blockName = $blocks[0]['blockName'];
+									$blockAttrs = $blocks[0]['attrs'];
+								
+									if ($blockName === 'block-lab/heading' && $blockAttrs['heading'] == 3)
+										echo "<h4 class=\"lead wow fadeInRight\" data-wow-delay=\"0.3s\">{$blockAttrs['text']}</h4>";
+								}
 							?>
 				
 							<p class="wow fadeInRight" data-wow-delay="0.5s">
