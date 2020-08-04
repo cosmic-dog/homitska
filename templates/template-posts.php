@@ -22,9 +22,7 @@ get_header();
 		));
 	 
 		if ($posts) {
-			foreach ($posts as $post) : 
-				$lead = get_post_meta($post->ID, 'lead', true);	?>
-
+			foreach ($posts as $post) : ?>
 				<div class="block b-main">
 					<div class="b-main-a">
 						<a href="<?php the_permalink(); ?>">
@@ -64,15 +62,6 @@ get_header();
 			
 			wp_reset_postdata();
 		}
-
-		// if ( have_posts() ) {
-
-		// 	while ( have_posts() ) {
-		// 		the_post();
-
-		// 		get_template_part( 'template-parts/content' );
-		// 	}
-		// }
 	?>
 </main>
 
