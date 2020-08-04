@@ -49,7 +49,7 @@ input[type=checkbox] {
     & + label, & + span {
         display: inline-block;
         vertical-align: middle;
-        margin: 3px 0 0 12px;
+        padding: 1px 0 0 10px;
     }
 }
 
@@ -90,10 +90,29 @@ input[type=number] {
     }
 }
 
+.wpcf7-form {
+    h3 {
+        padding-bottom: 0;
+    }
+    
+    .wpcf7-response-output, .wpcf7-not-valid-tip {
+        display: none !important;
+    }
 
-span.wpcf7-list-item {
-    margin: 0;
-}
-div.wpcf7 .ajax-loader  {
-    margin-right: -20px;
+    .wpcf7-list-item {
+        margin: 0;
+
+        label {
+            display: table;
+        }
+
+        input, span {
+            display: table-cell;
+            text-align: left;
+        }
+    }
+
+    .wpcf7 .ajax-loader  {
+        margin-right: -20px;
+    }
 }

@@ -35,31 +35,7 @@
     
     <div class="b-question-right">
         <div class="b-question-inner">
-            <form class="wow fadeInRight" data-wow-delay="0.5s">
-                <h3>Задай вопрос Элге</h3>
-                <div class="form-row">
-                    <label for="question-name">Имя</label>
-                    <input id="question-name" type="text" name="question-name">
-                </div>
-                <div class="form-row">
-                    <label for="question-email">Email</label>
-                    <input id="question-email" type="email" name="question-email">
-                </div>
-                <div class="form-row">
-                    <label for="question-text">Вопрос</label>
-                    <input id="question-text" type="text" name="question-text">
-                </div>
-                <div class="form-row">
-                    <input type="checkbox">
-                    <label for="">Согласие на обработку личных данных</label>
-                </div>
-
-                <div class="form-row form-row-btn">
-                    <button>
-                        <span>Задать вопрос</span>
-                    </button>
-                </div>
-            </form>
+            <?php block_field('form-shortcode') ?>
         </div>
     </div>
 </div>
