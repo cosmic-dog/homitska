@@ -1,5 +1,5 @@
 body {
-	font: 400 16px Roboto, sans-serif;
+	font: 400 16px $font-family;
 	color: $text-color;
 	text-align: left;
 
@@ -22,7 +22,7 @@ h1 {
 	&:not(.alt) {
 		margin-left: -1px;
 		letter-spacing: .25em;
-		font-family: "Proxima thin", sans-serif;
+		font-family: $font-family-heading;
 	}
 
 	&.alt {
@@ -46,7 +46,7 @@ h1 {
 h2 {
 	margin: 0;
 	padding: $h-padding-top 0 $h-padding-bottom 0;
-	font-family: "Proxima thin", sans-serif;
+	font-family: $font-family-heading;
     letter-spacing: .25em;
     font-weight: 400;
 	font-size: 3em;
@@ -58,7 +58,7 @@ h2 {
 }
 
 h3 {
-	font-family: "Proxima thin", sans-serif;
+	font-family: $font-family-heading;
     letter-spacing: 2px;
 	font-weight: 400;
 	font-size: 2em;

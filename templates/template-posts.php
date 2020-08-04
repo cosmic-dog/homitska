@@ -27,7 +27,7 @@ get_header();
 
 				<div class="block b-main">
 					<div class="b-main-a">
-						<a href="<?php block_field( 'url' ); ?>">
+						<a href="<?php the_permalink(); ?>">
 							<img class="wow fadeInLeft" src="<?php the_post_thumbnail_url(); ?>" alt="<?php block_field( 'heading' ); ?>" data-wow-delay="0.2s">
 						</a>
 					</div>

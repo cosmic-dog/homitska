@@ -16,6 +16,12 @@
             opacity: 1;
             transform: translateY(100%) scaleY(1);
         }
+
+        &:nth-child(4) {
+            ul {
+                width: 112%;
+            }
+        }
     }
 
     &-link {
