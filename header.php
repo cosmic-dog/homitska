@@ -22,14 +22,12 @@
 
 		<?php wp_head(); ?>
 
-		<!-- Homitska stuff -->
-		<!-- <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700"> -->
-		<!-- <link rel="stylesheet" href="/wp-content/themes/homitska/_website/compressed/compressed.css"> -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="http://homitska.com/static/elga_app/js/main.js"></script>
-
+		
 		<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+
+		<script src="/wp-content/themes/homitska/js/wow.js"></script>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -85,7 +83,7 @@
 					</a>
 					
 					<a href="/" class="header_logo-mobile">
-						<img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img">
+						<!-- <img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img"> -->
 					</a>
 					<div class="header-btn-wrap">
 						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s"><span>Связаться с нами</span></button>
