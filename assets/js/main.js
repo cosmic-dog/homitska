@@ -97,13 +97,32 @@ H.formValidation = (function() {
     }
 })();
 
+H.wpGalleryAnimate = (function() { 
+    let i = 0.3,
+        wpGalleryItems = $('.wp-block-gallery li');
+
+    function init() {
+        wpGalleryItems.each(function() {
+            $(this).addClass('wow fadeInRight');
+            $(this).attr('data-wow-delay', i+'s');
+            i = i + 0.1;
+        });
+    }
+
+    return {
+        init: init
+    }
+})();
+
 H.stickyHeader.init();
 H.modal.init();
 H.formValidation.init();
+H.wpGalleryAnimate.init();
 
 $(document).ready(() => {
     let title = $('h1').first().text();
-    $('.ctopic-hidden').val(title)
+   
+    $('.ctopic-hidden').val(title);
 });
 
 
