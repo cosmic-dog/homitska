@@ -98,7 +98,7 @@ H.formValidation = (function() {
 })();
 
 H.wpGalleryAnimate = (function() { 
-    let i = 0.3,
+    let i = 0.1,
         wpGalleryItems = $('.wp-block-gallery li');
 
     function init() {

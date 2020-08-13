@@ -1,3 +1,27 @@
+.bg-light-grey {
+    background: $bg-color-light-grey;
+
+    &:before {
+        background: $bg-color-light-grey;
+    }
+}
+
+.bg-lighter-grey {
+    background: $bg-color-lighter-grey;
+
+    &:before {
+        background: $bg-color-lighter-grey;
+    }
+}
+
+.bg-pink-grey {
+    background: $bg-color-pink-grey;
+
+    &:before {
+        background: $bg-color-pink-grey;
+    }
+}
+
 .cover {
     width: 100%;
     min-height: calc(100vh - 169px);
@@ -36,5 +60,25 @@
 
     h2 {
         text-align: left;
+    }
+}
+
+.full-bg {
+    position: relative;
+
+    * {
+        z-index: 3;
+        position: relative;
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: -100%;
+        bottom: 30px;
+        left: -100%;
+        z-index: 1;
     }
 }
