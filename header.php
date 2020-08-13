@@ -87,7 +87,16 @@
 						<!-- <img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img"> -->
 					</a>
 					<div class="header-btn-wrap">
-						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s"><span>Связаться с нами</span></button>
+						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s" data-modal="contactus">
+							<?php 
+								if (ICL_LANGUAGE_CODE == 'ru') 
+									echo '<span>Связаться с нами</span>';
+								if (ICL_LANGUAGE_CODE == 'en') 
+									echo '<span>Сontact us</span>';
+								if (ICL_LANGUAGE_CODE == 'lv') 
+									echo '<span>Sazinātos ar mums</span>';
+							?>
+						</button>
 					</div>
 				</div>
 
