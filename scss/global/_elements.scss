@@ -2,6 +2,7 @@ body {
 	font: 400 16px $font-family;
 	color: $text-color;
 	text-align: left;
+	overflow-x: hidden;
 
 	&.sticky {
 		padding-top: 100px;
@@ -63,7 +64,13 @@ h3 {
 	font-weight: 400;
 	font-size: 2em;
 	line-height: 1.2;
-    padding-bottom: 18px;
+	padding-bottom: 18px;
+	
+	&.alt {
+		letter-spacing: 2px;
+		font-family: "Times", serif;
+		font-style: italic;
+	}
 }
 
 h4 {
