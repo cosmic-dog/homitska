@@ -40,9 +40,5 @@
 		get_template_part( 'template-parts/modals' );
 		wp_footer(); 
 	?>
-
-	<!-- Homitska stuff -->
-	<script src="/wp-content/themes/homitska/assets/js/main.js"></script>
-	<!-- End of Homitska stuff -->
 </body>
 </html>

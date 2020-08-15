@@ -4,7 +4,6 @@ var hMap = (function () {
     let geocoder, gMap;
 
     function initMap () {
-        console.log('map init');
         let blockMap = document.getElementById('map'),
             address = 'Bilbao, Spain',
             countries = hCountries ? hCountries : ['New York', 'Italy', 'Latvia', 'Moscow', 'Belarus', 'Ukraine', 'Germany', 'Paris', 'Austria', 'India', 'Litva', 'Estonia'],
@@ -86,7 +85,6 @@ var hMap = (function () {
                 center = results[0].geometry.location;
                 center = { lat: center.lat(), lng: center.lng() };
                 callback(center);
-                console.log(results[0]);
             }
         })
     }

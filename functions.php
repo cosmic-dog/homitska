@@ -180,41 +180,25 @@ require get_template_directory() . '/inc/custom-css.php';
 /**
  * Register and Enqueue Styles.
  */
-function twentytwenty_register_styles() {
-
+function homitska_register_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
-
-	// wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
-	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
-
-	// Add output of Customizer settings as inline style.
-	wp_add_inline_style( 'twentytwenty-style', twentytwenty_get_customizer_css( 'front-end' ) );
-
-	// Add print CSS.
-	wp_enqueue_style( 'twentytwenty-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
 	
-	wp_enqueue_style( 'twentytwenty-homitska-style', get_template_directory_uri() . '/assets/css/main.css', null, $theme_version, 'all' );
+	wp_enqueue_style( 'homitska', get_template_directory_uri() . '/assets/css/main.css', null, $theme_version, 'all' );
 }
 
-add_action( 'wp_enqueue_scripts', 'twentytwenty_register_styles' );
+add_action( 'wp_enqueue_scripts', 'homitska_register_styles' );
 
 /**
  * Register and Enqueue Scripts.
  */
-function twentytwenty_register_scripts() {
+function homitska_register_scripts() {
 
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
-	wp_script_add_data( 'twentytwenty-js', 'async', true );
-
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true );
 }
 
-add_action( 'wp_enqueue_scripts', 'twentytwenty_register_scripts' );
+add_action( 'wp_enqueue_scripts', 'homitska_register_scripts' );
 
 /**
  * Fix skip link focus in IE11.
@@ -862,3 +846,44 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 		}
 	}
 }
+
+
+/**
+ * Disable unnecessary things to load in header
+ */
+
+// Remove RSS feed
+remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+remove_action( 'wp_head', 'index_rel_link' ); // index link
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
+remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+
+// Disable the emoji's
+function disable_emojis() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );	
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );	
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	
+	// Remove from TinyMCE
+	//add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+}
+add_action( 'init', 'disable_emojis' );
+
+
+// Disable REST API link tag
+remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+// Disable oEmbed Discovery Links
+remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+// Disable REST API link in HTTP headers
+remove_action('template_redirect', 'rest_output_link_header', 11, 0);

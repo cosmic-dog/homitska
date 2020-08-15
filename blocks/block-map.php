@@ -28,6 +28,6 @@
     <div id="map"></div>
 </div>
 
-<script>var hCountries = [<?php echo $countriesString; ?>]</script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/map.js"></script>
+<script>hCountries = [<?php echo $countriesString; ?>]</script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/map.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $hMapKey ?>&callback=hMap.initMap"></script>

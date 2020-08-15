@@ -1,7 +1,11 @@
 let gulp = require('gulp'),
     sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),
-    smap = require('gulp-sourcemaps');
+    smap = require('gulp-sourcemaps'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify-es').default;
+
+    
 const { logError } = require('gulp-sass');
 
 
@@ -11,11 +15,24 @@ gulp.task('sass', function(cb) {
         .pipe(smap.init())
         .pipe(sass())
         .pipe(cleanCSS())
-        .pipe(smap.write())
+        .pipe(smap.write('.'))
         .pipe(
             gulp.dest(function(f) {
                 //return f.base;
                 return 'assets/css/'
+            })
+        );
+    cb();
+});
+
+gulp.task('js', function(cb) {
+    gulp
+        .src('js/*.js')
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(
+            gulp.dest(function(f) {
+                return 'assets/js/'
             })
         );
     cb();

@@ -27,8 +27,6 @@
 		<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-
-		<script src="/wp-content/themes/homitska/js/wow.js"></script>
 	</head>
 
 	<body <?php body_class(); ?>>
