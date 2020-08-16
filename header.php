@@ -69,7 +69,7 @@
 					<a href="/" class="header_logo-link">
 						<?php
 							// Elga Homitska logo
-							get_template_part( 'template-parts/h/logo' );
+							get_template_part( 'template-parts/logo' );
 						?>
 					</a>
 					

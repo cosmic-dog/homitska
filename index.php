@@ -18,7 +18,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-
+	<h1>Index page</h1>
 	<?php
 
 	$archive_title    = '';
@@ -107,11 +107,8 @@ get_header();
 	}
 	?>
 
-	<?php get_template_part( 'template-parts/pagination' ); ?>
-
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php
 get_footer();
