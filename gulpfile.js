@@ -8,7 +8,6 @@ let gulp = require('gulp'),
     
 const { logError } = require('gulp-sass');
 
-
 gulp.task('sass', function(cb) {
     gulp
         .src('scss/*.scss')
@@ -39,8 +38,9 @@ gulp.task('js', function(cb) {
 });
 
 gulp.task('default',
-    gulp.series('sass', function(cb) {
+    gulp.series(['sass', 'js'], function(cb) {
         gulp.watch('scss/**/*.scss', gulp.series('sass'));
+        gulp.watch('js/**/*.js', gulp.series('js'));
         cb();
     })   
 );
