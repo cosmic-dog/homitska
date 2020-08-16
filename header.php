@@ -1,32 +1,24 @@
 <?php
 /**
- * Header file for the Twenty Twenty WordPress default theme.
+ * Header file for the Homitska theme.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @since Homitska 1.0
  */
 
 ?><!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>
-
 	<head>
-
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-
-		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-		<script src="http://homitska.com/static/elga_app/js/jquery.js"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
 	</head>
 
 	<body <?php body_class(); ?>>

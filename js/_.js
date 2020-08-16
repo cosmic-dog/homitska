@@ -1,1 +1,3 @@
-var wow, H = {};
+var wow, 
+    $ = jQuery,
+    H = {};
