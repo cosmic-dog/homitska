@@ -30,8 +30,7 @@
 			<div class="header-inner">
 				<div class="header-top">
 					<a href="tel:+37129146982" class="header-phone wow fadeInLeft" data-wow-delay="1.4s">(+371) 291 46982</a>
-					
-					<!-- Social menu -->
+										
 					<div class="header_social">	
 						<?php 
 							if ( has_nav_menu( 'primary' ) ) {
@@ -46,8 +45,7 @@
 							}
 						?>
 					</div>
-					<!-- End: social menu -->
-
+					
 					<div class="header_lang wow fadeInDown" data-wow-delay=".9s" data-active="ru">
 						<?php 
 							if ( has_nav_menu( 'primary' ) ) {
@@ -74,7 +72,7 @@
 					</a>
 					
 					<a href="/" class="header_logo-mobile">
-						<!-- <img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img"> -->
+						<img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img">
 					</a>
 					<div class="header-btn-wrap">
 						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s" data-modal="contactus">
