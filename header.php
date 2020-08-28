@@ -45,6 +45,8 @@
 							}
 						?>
 					</div>
+
+					<button class="header-menu-btn trans no-animation">Menu</button>
 					
 					<div class="header_lang wow fadeInDown" data-wow-delay=".9s" data-active="ru">
 						<?php 
@@ -66,25 +68,18 @@
 
 					<a href="/" class="header_logo-link">
 						<?php
-							// Elga Homitska logo
 							get_template_part( 'template-parts/logo' );
 						?>
 					</a>
 					
 					<a href="/" class="header_logo-mobile">
-						<img src="/media/upload/2018/01/24/favicon.png" alt="Elga Homitska" class="header_logo-mobile-img">
+						<img src="<?php echo get_template_directory_uri(); ?>/logo.png" alt="Elga Homitska" class="header_logo-mobile-img">
 					</a>
-					<div class="header-btn-wrap">
-						<button class="trans btn-small wow fadeInRight" data-wow-delay="1.4s" data-modal="contactus">
-							<?php 
-								if (ICL_LANGUAGE_CODE == 'ru') 
-									echo '<span>Связаться с нами</span>';
-								if (ICL_LANGUAGE_CODE == 'en') 
-									echo '<span>Сontact us</span>';
-								if (ICL_LANGUAGE_CODE == 'lv') 
-									echo '<span>Sazinātos ar mums</span>';
-							?>
-						</button>
+					
+					<div class="header-btn-wrap wow fadeInRight" data-wow-delay="1.4s">
+						<?php
+							get_template_part('template-parts/contact-button');
+						?>
 					</div>
 				</div>
 
@@ -102,6 +97,11 @@
 						}
 					?>
 
+					<div class="header-btn-wrap mobile">
+						<?php
+							get_template_part('template-parts/contact-button');
+						?>
+					</div>
 				</nav>
 			</div>
 		</header>

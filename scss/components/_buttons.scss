@@ -15,7 +15,7 @@ button, .btn {
     font-size: .7em;
     cursor: pointer;
     
-    &:not(.trans) {
+    &:not(.trans), &:not(.no-animation) {
         color: $bg-color;
         background: $btn-bg;
 
@@ -32,12 +32,14 @@ button, .btn {
         color: $text-color;
         background: $btn-bg-trans;
 
-        &:after {
-            background: $btn-bg;
-        }
+        &:not(.no-animation) {
+            &:after {
+                background: $btn-bg;
+            }
 
-        &:not([disabled]):hover {
-            color: $bg-color;
+            &:not([disabled]):hover {
+                color: $bg-color;
+            }
         }
     }
 
