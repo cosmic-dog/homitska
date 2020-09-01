@@ -45,8 +45,10 @@
 							}
 						?>
 					</div>
-
-					<button class="header-menu-btn trans no-animation">Menu</button>
+					
+					<?php
+						get_template_part( 'template-parts/menu-button' );
+					?>
 					
 					<div class="header_lang wow fadeInDown" data-wow-delay=".9s" data-active="ru">
 						<?php 

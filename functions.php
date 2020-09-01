@@ -755,6 +755,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 		$isParent = !$item->menu_item_parent;
 		$classNames = '';
 		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
+		$hasChildren = in_array('menu-item-has-children', $item->classes);
 				
 		if($isParent) {
 			++$GLOBALS['menu-animation-timeout'];
@@ -763,7 +764,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 
 		if ($item->type_label != 'Language switcher') {
 	
-			$output .= '<li>';
+			$output .= '<li class="' . implode(" ", $item->classes) . '">';
 
 			if( $permalink && $permalink != '#' ) {
 				$output .= '<a href="' . $permalink . '"' . $classNames . '><span>';
@@ -772,7 +773,10 @@ class Homitska_Walker extends Walker_Nav_Menu {
 			$output .= $title;
 
 			if( $permalink && $permalink != '#' ) {
-				$output .= '</a></span>';
+				$output .= '</span></a>';
+
+				if ($hasChildren) 
+					$output .= '<button class="header-menu-expand trans no-animation fa"></button>';
 			} 
 		}
 	}

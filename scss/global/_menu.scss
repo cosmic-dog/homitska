@@ -12,16 +12,10 @@
     & > ul > li {
         padding: 16px 0;
 
-        &:hover ul {
-            opacity: 1;
-            transform: translateY(100%) scaleY(1);
-        }
-
-        &:nth-child(4) {
-            ul {
-                width: 112%;
-            }
-        }
+        // &:hover ul {
+        //     opacity: 1;
+        //     transform: translateY(100%) scaleY(1);
+        // }
     }
 
     &-link {
@@ -64,14 +58,7 @@
     }
 
     .sub-menu {
-        width: 100%;
-        opacity: .3;
-        background: $bg-color;
-        position: absolute;
-        bottom: 0;
-        transform-origin: top center;
-        transform: translateY(100%) scaleY(0);
-        transition: all 0.2s linear;
+        min-width: 100%;
     
         li {
             display: block;
@@ -90,6 +77,31 @@
             font-size: .9em;
         }
     }
+
+    &-expand.fa {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: none;
+        padding: 0;
+        font-size: 26px !important;
+        color: $text-color-light !important;
+        border: none;
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        outline: none;
+
+        &:before {
+            content: '\f107';
+        }
+
+        &.expanded {
+            &:before {
+                content: '\f106'
+            }
+        }
+    }
 }
 
 .social-menu {
@@ -97,6 +109,27 @@
 		list-style-type: none;
 		display: inline-block;
 	}
+}
+
+@media(min-width: 801px) {
+    .header-menu {    
+        & > ul > li {
+            &:hover ul {
+                opacity: 1;
+                transform: translateY(100%) scaleY(1);
+            }
+        }
+
+        .sub-menu {
+            opacity: .3;
+            background: $bg-color;
+            position: absolute;
+            bottom: 0;
+            transform-origin: top center;
+            transform: translateY(100%) scaleY(0);
+            transition: all 0.2s linear;
+        }
+    }
 }
 
 @media(max-width: 1400px){
@@ -127,7 +160,24 @@
 @media(max-width: 800px){
 	.header-menu {
         margin-left: 0;
-        display: block;
+        padding-top: 40px;
+        display: none;
+        background: $bg-color;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        ul.sub-menu {
+            display: none;
+            margin-top: 16px;
+
+            li {
+                text-align: center;
+                border: none;
+            }
+        }
 
         li {
             width: 100%;
@@ -138,6 +188,10 @@
         &-link {
             font-size: 14px;
             padding: 0 10px;
+        }
+
+        &-expand.fa {
+            display: block;
         }
     }
 }

@@ -3,10 +3,6 @@ body {
 	color: $text-color;
 	text-align: left;
 	overflow-x: hidden;
-
-	&.sticky {
-		padding-top: 100px;
-	}
 }
 
 h1, h2, h3, h4 {

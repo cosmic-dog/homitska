@@ -1,12 +1,10 @@
 
+H.menu.init();
 H.stickyHeader.init();
 H.modal.init();
 H.formValidation.init();
 H.wpGallery.init();
 H.svg.init();
-
-
-
 
 var wowInit = function() {
     if(WOW){
@@ -17,7 +15,6 @@ var wowInit = function() {
 }
 
 wowInit();
-
 
 $(document).ready(() => {
     let title = $('h1').first().text();
