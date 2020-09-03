@@ -35,3 +35,21 @@
         font-size: 19px;
     }
 }
+
+
+@media(max-width: 1300px){
+	.b-experience li {
+        padding-left: 40px !important;
+    }
+}
+
+@media(max-width: 800px){
+	.b-experience {
+        padding-top: 40px;
+
+        li {
+            width: 100%;
+            padding-left: 20px !important;
+        }
+    }
+}

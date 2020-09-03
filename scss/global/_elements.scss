@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 
 h1 {
 	padding-bottom: $h-padding-bottom;
-	font-size: 3.2em;
+	font-size: 50px;
 	line-height: 1;
 	
 	&:not(.alt) {
@@ -46,7 +46,7 @@ h2 {
 	font-family: $font-family-heading;
     letter-spacing: .25em;
     font-weight: 400;
-	font-size: 3em;
+	font-size: 45px;
 	text-align: center;
 	
 	&.bg-alt {
@@ -134,7 +134,28 @@ b, strong {
 	font-weight: 500;
 }
 
+@media(max-width: 960px){
+	h1 {
+		font-size: 40px;
+	}
 
+	h4 {
+		&.lead {
+			margin-top: -20px;
+		}
+	}
+}
+
+@media(max-width: 800px) {
+	body {
+		font-size: 15px;
+	}
+
+	h2 {
+		font-size: 35px;
+		letter-spacing: 5px;
+	}
+}
 
 
 

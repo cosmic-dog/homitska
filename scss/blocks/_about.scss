@@ -20,10 +20,12 @@
     }
 
     &-right {
-        padding-left: 6em;
+        width: 50%;
+        padding: 20px 0 20px 96px;
 
         p {
-            width: 30em;
+            width: 100%;
+            max-width: 450px;
             font-size: 1.2em;
             line-height: 1.6;
         }
@@ -79,5 +81,50 @@
         width: 38em;
         height: 30em;
         background-color: $bg-color-pink-grey;
+    }
+}
+
+@media(max-width: 960px){
+    .b-about {
+        &-right {
+            padding-left: 50px;
+        }
+    }
+}
+
+@media(max-width: 800px){
+    .b-about {
+        &-left {
+            width: 32%;
+        }
+
+        &-right {
+            width: 66%;
+        }
+    }
+}
+
+@media(max-width: 560px){
+	.b-about {
+        &-left {
+            width: 100%;
+            padding: 20px 10px 16px;
+            text-align: center;
+            
+            img {
+                width: auto;
+                max-height: 300px;
+                margin: 0;
+            }
+        }
+        
+        &-right {
+            width: 100%;
+            padding: 30px 20px;
+
+            p {
+                max-width: 100%;
+            }
+        }
     }
 }

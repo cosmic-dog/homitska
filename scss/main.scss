@@ -40,6 +40,10 @@ body.landing {
         min-height: calc(100vh - 120px);
     }
 
+    .header-menu-btn, .header_lang{
+        display: none !important;
+    }
+
     .header-top {
         border-bottom: none;
     }
@@ -67,6 +71,14 @@ body.landing {
                     margin-right: 20px;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body.landing {
+        .b-landing-top {
+            min-height: calc(100vh - 61px);
         }
     }
 }
