@@ -21,7 +21,13 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 
-	<body <?php body_class(); ?>>
+	<?php 
+		// Remove later!!!
+		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'masterclass') === false;
+		$bodyLandingClass = $isLandingDomain ? 'landing' : '';
+	?>
+
+	<body <?php body_class($bodyLandingClass); ?>>
 
 		<?php wp_body_open(); ?>
 

@@ -32,3 +32,37 @@
 .wow {
     visibility: hidden;
 }
+
+
+// Remove when website will go live
+body.landing {
+    .header-top {
+        border-bottom: none;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .footer {
+        padding-top: 8px;
+    }
+
+    .footer-menu {
+        &>li {
+            &:nth-child(-n+6) {
+                display: none;
+            }
+
+            &:nth-child(7) {
+                span {
+                    display: none;
+                }
+                &>ul>li {
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
