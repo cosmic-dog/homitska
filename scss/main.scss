@@ -36,6 +36,10 @@
 
 // Remove when website will go live
 body.landing {
+    .cover {
+        min-height: calc(100vh - 120px);
+    }
+
     .header-top {
         border-bottom: none;
     }
