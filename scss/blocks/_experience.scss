@@ -5,13 +5,13 @@
     
     ul {
         width: 100%;
-        display: table;
     }
 
     li {
         width: 33%;
         text-align: left;
-        display: table-cell;
+        display: inline-block;
+        vertical-align: top;
         padding: 20px 0 20px 50px;    
 
         &:first-child {

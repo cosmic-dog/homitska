@@ -13,21 +13,21 @@ $h3arr = explode(' ', block_field('heading-3', false));
 ?>
 <div class="block b-experience">
     <ul>
-        <li>
+        <li class="wow fadeInRight" data-wow-delay="0.1s">
             <h3 class="alt">
                 <?php echo $h1arr[0]; ?>
                 <em><?php echo $h1arr[1]; ?></em>
             </h3>
             <span><?php block_field('text-1'); ?></span>
         </li>
-        <li>
+        <li class="wow fadeInRight" data-wow-delay="0.3s">
             <h3 class="alt">
                 <?php echo $h2arr[0]; ?>
                 <em><?php echo $h2arr[1]; ?></em>
             </h3>
             <span><?php block_field('text-2'); ?></span>
         </li>
-        <li>
+        <li class="wow fadeInRight" data-wow-delay="0.5s">
             <h3 class="alt">
                 <?php echo $h3arr[0]; ?>
                 <em><?php echo $h3arr[1]; ?></em>

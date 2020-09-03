@@ -1,6 +1,6 @@
 .b-about {
     background: $bg-color-lighter-grey;
-
+    
     &-left, &-right {
         display: inline-block;
         vertical-align: middle;
@@ -26,6 +26,12 @@
             width: 30em;
             font-size: 1.2em;
             line-height: 1.6;
+        }
+    }
+
+    &.smallp {
+        p {
+            font-size: 15px;
         }
     }
 }

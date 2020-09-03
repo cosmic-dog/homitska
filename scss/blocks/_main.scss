@@ -1,5 +1,20 @@
 .b-main {
     height: 500px;
+
+    &.alt {
+        height: 600px;
+        .b-main-a {
+            width: 38%;
+        }
+
+        .b-main-b {
+            width: 62%;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
     
     &-a, &-b {
         height: 100%;

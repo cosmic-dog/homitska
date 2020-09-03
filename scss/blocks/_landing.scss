@@ -1,0 +1,25 @@
+.b-landing {
+    &-top {
+        .title-wrap {
+            padding: 40px;
+            text-align: center;
+            background: rgba($bg-color-lighter-grey, .7);
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        h4 {
+            font-size: 22px;
+            padding-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 2;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+    }
+}

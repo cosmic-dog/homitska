@@ -32,16 +32,18 @@
     background-size: cover;
     //background-attachment: fixed;
 
-    &:before {
-        content: '';
-        background: $bg-color-lighter-grey;
-        opacity: .6;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: -3px;
-        left: 0;
-        z-index: 2;
+    &:not(.b-landing-top) {
+        &:before {
+            content: '';
+            background: $bg-color-lighter-grey;
+            opacity: .6;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -3px;
+            left: 0;
+            z-index: 2;
+        }
     }
 
     .title-wrap {
@@ -60,6 +62,10 @@
 
     h2 {
         text-align: left;
+    }
+
+    &.ptop {
+        padding-top: 60px;
     }
 }
 
