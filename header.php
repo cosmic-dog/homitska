@@ -23,7 +23,7 @@
 
 	<?php 
 		// Remove later!!!
-		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'masterclass') === false;
+		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'masterclass') !== false;
 		$bodyLandingClass = $isLandingDomain ? 'landing' : '';
 	?>
 
