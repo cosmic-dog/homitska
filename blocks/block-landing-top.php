@@ -18,7 +18,7 @@ $hasBtn = !empty(block_field('button-label', false));
         <p class="wow fadeInUp" data-wow-delay="0.4s"><?php block_field('text'); ?></p>
 
         <?php if ($hasBtn) : ?>
-            <a href="<?php block_field('button-url'); ?>" class="btn wow fadeInUp" data-wow-delay="0.7s"> 
+            <a href="<?php block_field('button-url'); ?>" class="btn"> 
                 <span><?php block_field('button-label'); ?></span>
             </a>
         <?php endif; ?>

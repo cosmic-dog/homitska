@@ -34,7 +34,7 @@
 }
 
 
-// Remove when website will go live
+// ##remove when website will go live
 body.landing {
     .cover {
         min-height: calc(100vh - 120px);
@@ -75,6 +75,15 @@ body.landing {
     }
 }
 
+@media (max-width: 960px) {
+    body.landing {
+        .header_social {
+            width: 25%;
+            text-align: left;
+        }
+    }
+}
+
 @media (max-width: 800px) {
     body.landing {
         .b-landing-top {
@@ -82,3 +91,15 @@ body.landing {
         }
     }
 }
+
+@media(max-width: 560px){
+    body.landing {
+        .footer-menu-social {
+            width: 100%;
+            display: block !important;
+            text-align: center !important;
+            margin-top: 16px !important;
+        }
+    }
+}
+// ##remove-end

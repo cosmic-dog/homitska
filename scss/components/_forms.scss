@@ -95,13 +95,43 @@ input[type=number] {
     }
 }
 
+.wpcf7 {
+    position: relative;
+}
+
 .wpcf7-form {
     h3 {
         padding-bottom: 0;
     }
     
-    .wpcf7-response-output, .wpcf7-not-valid-tip {
-        //display: none !important;
+    .wpcf7-not-valid-tip {
+        display: none !important;
+    }
+    
+    .wpcf7-response-output {
+        background: #fff;
+        border-width: 1px !important;
+        text-align: center;
+        margin: 0 !important;
+        padding-top: 130px !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &.sent {
+        .wpcf7-response-output {
+            border-color: $success-color;
+        }
+    }
+
+    &.failed {
+        .wpcf7-response-output {
+            border-color: $error-color;
+        }
     }
 
     .wpcf7-list-item {
