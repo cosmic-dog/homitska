@@ -853,6 +853,22 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 
 
 /**
+ * Disable Script and Styles
+ */
+function shapeSpace_disable_scripts_styles() {
+	
+	//wp_dequeue_script('owl_carousel_js');
+	wp_dequeue_style('owl_animate_css');
+	wp_dequeue_style('owl_carousel_css');
+	//wp_dequeue_style('owl_theme_css');
+}
+
+add_action('get_footer', 'shapeSpace_disable_scripts_styles');
+//add_action('wp_print_styles', 'shapeSpace_disable_scripts_styles', 100);
+//add_action('wp_enqueue_scripts', 'shapeSpace_disable_scripts_styles', 100);
+
+
+/**
  * Disable unnecessary things to load in header
  */
 
