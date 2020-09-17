@@ -112,7 +112,32 @@
 	}
 }
 
-@media(min-width: 801px) {
+@include mq-1300 {
+	.header-menu {
+        &-link {
+            padding: 0 40px;
+        }
+    }
+}
+
+@include mq-1150 {
+    .header-menu {
+        &-link {
+            padding: 0 20px;
+        }
+    }
+}
+
+@include mq-960 {
+	.header-menu {
+        &-link {
+            font-size: 12px;
+            padding: 0 10px;
+        }
+    }
+}
+
+@include mqm-800 {
     .header-menu {    
         & > ul > li {
             &:hover ul {
@@ -134,32 +159,7 @@
     }
 }
 
-@media(max-width: 1400px){
-	.header-menu {
-        &-link {
-            padding: 0 40px;
-        }
-    }
-}
-
-@media(max-width: 1150px){
-	.header-menu {
-        &-link {
-            padding: 0 20px;
-        }
-    }
-}
-
-@media(max-width: 960px){
-	.header-menu {
-        &-link {
-            font-size: 12px;
-            padding: 0 10px;
-        }
-    }
-}
-
-@media(max-width: 800px){
+@include mq-800 {
 	.header-menu {
         margin-left: 0;
         padding-top: 40px;

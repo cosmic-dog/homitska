@@ -84,7 +84,7 @@
     }
 }
 
-@media(max-width: 960px){
+@include mq-960 {
     .b-about {
         &-right {
             padding-left: 50px;
@@ -92,7 +92,7 @@
     }
 }
 
-@media(max-width: 800px){
+@include mq-800 {
     .b-about {
         &-left {
             width: 32%;
@@ -104,7 +104,7 @@
     }
 }
 
-@media(max-width: 560px){
+@include mq-560 {
 	.b-about {
         &-left {
             width: 100%;

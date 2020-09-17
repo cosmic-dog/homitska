@@ -134,7 +134,7 @@ b, strong {
 	font-weight: 500;
 }
 
-@media(max-width: 960px){
+@include mq-960 {
 	h1 {
 		font-size: 40px;
 	}
@@ -146,7 +146,7 @@ b, strong {
 	}
 }
 
-@media(max-width: 800px) {
+@include mq-800 {
 	body {
 		font-size: 15px;
 	}
@@ -171,57 +171,3 @@ b, strong {
 
 
 
-
-
-
-
-
-
-
-// @media (max-width: 1600px){
-// 	body {
-// 		font-size: 15px;
-// 	}
-// }
-
-// @media (max-width: 1400px){
-// 	body {
-// 		font-size: 14px;
-// 	}
-// }
-
-// @media (max-width: 1200px){
-// 	body {
-// 		font-size: 13px;
-// 	}
-// }
-
-// @media (max-width: 1050px){
-// 	body {
-// 		font-size: 12px;
-// 	}
-// }
-
-
-
-.clear {
-	display: block;
-	clear: both;
-}
-
-.clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-// .animated {
-// 	animation-iteration-count: 1;
-// }
-
-// .disable-select {
-// 	-webkit-user-select: none;
-// 	-moz-user-select: none;
-// 	-ms-user-select: none;
-// 	user-select: none;
-// }

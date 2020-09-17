@@ -98,3 +98,14 @@ main {
 .hidden {
     display: none;
 }
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}

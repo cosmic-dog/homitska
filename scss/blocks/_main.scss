@@ -85,8 +85,7 @@
     }
 }
 
-
-@media(max-width: 1300px) {
+@include mq-1300 {
     .b-main {
         &:nth-child(odd) {
             .b-main-b {
@@ -102,7 +101,7 @@
     }
 }
 
-@media(max-width: 960px) {
+@include mq-960 {
     .b-main {
         &.alt {
             height: 650px;
@@ -110,7 +109,7 @@
     }
 }
 
-@media(max-width: 800px) {
+@include mq-800 {
     .b-main {
         height: auto !important;
 

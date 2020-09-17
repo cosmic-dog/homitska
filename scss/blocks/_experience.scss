@@ -36,14 +36,13 @@
     }
 }
 
-
-@media(max-width: 1300px){
+@include mq-1300 {
 	.b-experience li {
         padding-left: 40px !important;
     }
 }
 
-@media(max-width: 800px){
+@include mq-800 {
 	.b-experience {
         padding-top: 40px;
 

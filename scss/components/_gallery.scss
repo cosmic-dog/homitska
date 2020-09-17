@@ -69,7 +69,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@include mq-1150 {
     .wp-block-gallery  {
         .blocks-gallery-item {
             width: calc((100% - 64px)/3) !important;
@@ -77,7 +77,7 @@
     }
 }
 
-@media (max-width: 800px) {
+@include mq-800 {
     .wp-block-gallery  {
         .blocks-gallery-item {
             width: calc((100% - 64px)/2) !important;
@@ -85,7 +85,7 @@
     }
 }
 
-@media (max-width: 540px) {
+@include mq-560 {
     .wp-block-gallery  {
         .blocks-gallery-item {
            max-height: 40px;

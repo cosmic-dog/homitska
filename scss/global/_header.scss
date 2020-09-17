@@ -190,7 +190,44 @@
 	}
 }
 
-@media(min-width: 801px) {
+
+
+@include mq-1300 {
+	.header {
+		&-top {
+			padding-left: 20px;
+			padding-right:20px;
+		}
+	}
+}
+
+@include mq-1150 {
+	.header {
+
+		&_logo-svg {
+			width: 250px;
+		}
+
+		.btn-small {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+}
+
+@include mq-960 {
+	.header {
+		&_logo-svg {
+			width: 240px;
+		}
+
+		&-phone {
+			display: none;
+		}
+	}
+}
+
+@include mqm-800 {
 	body {
 		&.sticky {
 			padding-top: 100px;
@@ -233,43 +270,7 @@
 	}
 }
 
-@media(max-width: 1300px) {
-	.header {
-		&-top {
-			padding-left: 20px;
-			padding-right:20px;
-		}
-	}
-}
-
-@media(max-width: 1150px) {
-	.header {
-
-		&_logo-svg {
-			width: 250px;
-		}
-
-		.btn-small {
-			padding-left: 10px;
-			padding-right: 10px;
-		}
-	}
-}
-
-@media(max-width: 960px){
-	.header {
-		&_logo-svg {
-			width: 240px;
-		}
-
-		&-phone {
-			display: none;
-		}
-	}
-}
-
-
-@media(max-width: 800px){
+@include mq-800 {
 	.header {
 		&-top {
 			height: 60px;
@@ -331,11 +332,7 @@
 	}
 }
 
-@media(max-width: 560px){
-	
-}
-
-@media(max-width: 350px){
+@include mq-350 {
 	.header {
 		&_logo-mobile {
 			display: block;

@@ -24,8 +24,7 @@
     }
 }
 
-
-@media(max-width: 1150px) {
+@include mq-1150 {
 	.b-landing-top {
         .title-wrap {
             width: 90%;
@@ -33,14 +32,14 @@
     }
 }
 
-@media(max-width: 800px) {
+@include mq-800 {
     .b-landing-top {
         min-height: calc(100vh - 61px);
     }
 
 }
 
-@media(max-width: 560px) {
+@include mq-560 {
 	.b-landing-top {
         background-position: 66%;
         
