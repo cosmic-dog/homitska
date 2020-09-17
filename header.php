@@ -23,7 +23,7 @@
 
 	<?php 
 		// ##remove
-		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'homitska') !== false;
+		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'homitska') === false;
 		$bodyLandingClass = $isLandingDomain ? 'landing' : '';
 	?>
 
