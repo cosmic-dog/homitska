@@ -776,7 +776,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 				$output .= '</span></a>';
 
 				if ($hasChildren) 
-					$output .= '<button class="header-menu-expand trans no-animation fa"></button>';
+					$output .= '<button class="menu-expand-btn trans no-animation fa"></button>';
 			} 
 		}
 	}
@@ -818,6 +818,7 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 		$permalink = $item->url;
 		$isParent = !$item->menu_item_parent;
 		$isSocialMenu = $permalink == '#social-menu';
+		$hasChildren = in_array('menu-item-has-children', $item->classes);
 		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
 				
 		if ($item->type_label != 'Language switcher') {
@@ -846,6 +847,9 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 				$output .= '<a href="' . $permalink . '">';
 				$output .= $title;
 				$output .= '</a>';
+
+				if ($hasChildren) 
+					$output .= '<button class="menu-expand-btn trans no-animation fa"></button>';
 			}
 		}
 	}

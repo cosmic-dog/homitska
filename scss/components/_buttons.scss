@@ -30,7 +30,7 @@ button, .btn {
 
     &.trans {
         color: $text-color;
-        background: $btn-bg-trans;
+        background: transparent;
 
         &:not(.no-animation) {
             &:after {

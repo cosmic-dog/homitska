@@ -1,7 +1,7 @@
 H.menu = (function () {
     const menu = $('.header-menu'),
         menuBtn = $('.header-menu-btn'),
-        expandBtn = $('.header-menu-expand');
+        expandBtn = $('.menu-expand-btn');
 
     function openMenu() {
         menu.toggle();

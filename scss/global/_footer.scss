@@ -34,6 +34,7 @@
             vertical-align: top;
             padding-right: 20px;
             margin-left: 50px;
+            position: relative;
 
             & > a, span {
                 text-transform: uppercase;
@@ -120,6 +121,29 @@
                 
                 &:not(:first-child) {
                     margin: 30px 0 0 0 !important;
+                }
+
+                &:not(:last-child) {
+                    .sub-menu {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .menu-expand-btn.fa {
+            top: -12px;
+            display: block;
+        }
+    }
+}
+
+@media(min-width: 561px){
+	.footer {
+        &-menu {
+            & > li {       
+                .sub-menu {
+                    display: block !important;
                 }
             }
         }

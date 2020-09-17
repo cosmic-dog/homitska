@@ -21,13 +21,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 
-	<?php 
-		// ##remove
-		$isLandingDomain = strpos($_SERVER['SERVER_NAME'], 'homitska') === false;
-		$bodyLandingClass = $isLandingDomain ? 'landing' : '';
-	?>
-
-	<body <?php body_class($bodyLandingClass); ?>>
+	<body <?php body_class(); ?>>
 
 		<?php wp_body_open(); ?>
 
@@ -86,11 +80,7 @@
 					
 					<div class="header-btn-wrap wow fadeInRight" data-wow-delay="1.4s">
 						<?php
-							// ##remove
-							if ($isLandingDomain) 
-								echo '<a href="#signup-seminar" class="btn trans btn-small"><span>Записаться</span></a>';
-							else
-								get_template_part('template-parts/contact-button');
+							get_template_part('template-parts/contact-button');
 						?>
 					</div>
 				</div>
