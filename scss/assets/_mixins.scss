@@ -24,6 +24,10 @@
     @media (min-width: 801px) { @content; }
 }
 
+@mixin mq-680 {
+    @media (max-width: 680px) { @content; }
+}
+
 @mixin mq-560 {
     @media (max-width: 560px) { @content; }
 }
