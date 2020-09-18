@@ -62,3 +62,12 @@
         }
     }
 }
+
+@include mq-560 {
+    .b-question {
+        &-left, &-right {
+            padding-left: $mobile-padding;
+            padding-right: $mobile-padding;
+        }
+    }
+}

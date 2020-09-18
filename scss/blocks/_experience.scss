@@ -48,7 +48,8 @@
 
         li {
             width: 100%;
-            padding-left: 20px !important;
+            padding-left: $mobile-padding !important;
+            padding-right: $mobile-padding;
         }
     }
 }
