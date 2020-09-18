@@ -87,6 +87,8 @@
 
 @include mq-560 {
     .wp-block-gallery  {
+        margin-left: 30px;
+        
         .blocks-gallery-item {
            max-height: 40px;
         }
