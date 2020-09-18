@@ -152,3 +152,32 @@
         }
     }
 }
+
+@include mq-560 {
+    .b-main {
+        p {
+            position: relative;
+        }
+
+        .h-icon-more {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 17px;
+            position: absolute;
+            bottom: -40px;
+            top: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+
+            &:before {
+                left: 35px;
+            }
+
+            &:hover:before {
+                left: 1px;
+            }
+        }
+    }
+}
