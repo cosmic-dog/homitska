@@ -32,13 +32,6 @@
     }
 }
 
-@include mq-800 {
-    .b-landing-top {
-        min-height: calc(100vh - 61px);
-    }
-
-}
-
 @include mq-560 {
 	.b-landing-top {
         background-position: 66%;

@@ -83,6 +83,12 @@
             }
         }
     }
+
+    &:last-child {
+        img {
+            margin-top: 0;
+        }
+    }
 }
 
 @include mq-1300 {
