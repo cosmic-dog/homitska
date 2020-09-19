@@ -4,6 +4,13 @@
     //all ease-in-out .2s;;
 }
 
+@mixin font-awesome() {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 @mixin mq-1300 {
     @media (max-width: 1300px) { @content; }
 }
