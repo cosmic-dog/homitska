@@ -11,7 +11,7 @@
 $hasBtn = !empty(block_field('button-label', false));
 ?>
 
-<div class="cover b-landing-top" style="background-image: url(<?php  block_field( 'image'); ?>)">
+<div class="cover b-landing-top <?php echo block_value('className'); ?>" style="background-image: url(<?php  block_field( 'image'); ?>)">
     <div class="title-wrap">
         <h4 class="wow fadeInDown" data-wow-delay="0.1s"><?php block_field('top-lead'); ?></h4>
         <h1 class="alt wow fadeInDown" data-wow-delay="0.3s"><?php block_field('heading'); ?></h1>

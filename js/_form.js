@@ -1,13 +1,9 @@
-
-
 document.addEventListener( 'wpcf7mailsent', function( event ) {
-    console.log('mail sent nice');
     window.location = '/spasibo/';
 }, false );
 
 document.addEventListener( 'wpcf7mailfailed', function( event ) {
-    console.log('mail didnt send');
-    //location = 'http://example.com/';
+    //window.location = 'http://example.com/';
 }, false );
 
 
