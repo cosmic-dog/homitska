@@ -10,9 +10,9 @@ h1, h2, h3, h4 {
 	font-variant-numeric: lining-nums;
 	font-weight: 400;
 
-	em {
+	.hl {
 		font-style: inherit;
-		padding: 8px;
+		padding: 4px 8px;
 		color: $text-color;
 		background: $text-color-light;
 	}

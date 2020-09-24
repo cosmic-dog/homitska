@@ -8,8 +8,8 @@ button, .btn {
     font-family: inherit;
     font-weight: 500;
     border: 1px solid $btn-bg;
-    padding: 0 56px;
-    line-height: 4;
+    padding: 12px 56px;
+    line-height: 1.8;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: .7em;
@@ -48,7 +48,8 @@ button, .btn {
     }
 
     &-small {
-        padding: 0 38px;
+        padding-left: 38px;
+        padding-right: 38px;
     }
 
     span {
@@ -85,3 +86,11 @@ input[type=submit] {
         background: $bg-color;
     }
 } 
+
+@include mq-560 {
+    button, .btn {
+        //width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
