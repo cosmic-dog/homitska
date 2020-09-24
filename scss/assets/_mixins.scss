@@ -4,6 +4,14 @@
     //all ease-in-out .2s;;
 }
 
+@mixin ellipsis($linesNo: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $linesNo;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @mixin font-awesome() {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
