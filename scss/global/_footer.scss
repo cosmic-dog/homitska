@@ -34,6 +34,7 @@
             vertical-align: top;
             padding-right: 20px;
             margin-left: 50px;
+            position: relative;
 
             & > a, span {
                 text-transform: uppercase;
@@ -74,5 +75,77 @@
         margin-bottom: 0;
         color: $text-color-light;
         border-top: 1px solid $border-color;
+    }
+}
+
+@include mq-1300 {
+	.footer {
+        &-menu {
+            & > li {
+                margin-left: 10px;
+            }
+        }
+	}
+}
+
+@include mq-1150 {
+	.footer {
+		&-menu {
+            & > li {
+                margin-left: 0;
+
+                &:nth-child(-n+4) {
+                    width: 30%;
+                }
+
+                &:nth-child(4) {
+                    margin-bottom: 60px;
+                }
+
+                &:nth-child(6) {
+                    width: 40%;
+                }
+            }
+        }
+	}
+}
+
+@include mqm-560 {
+	.footer {
+        &-menu {
+            & > li {       
+                .sub-menu {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+
+@include mq-560 {
+	.footer {
+        &-menu {
+            & > li {
+                width: 100% !important;
+                padding-left: $mobile-padding;
+                position: relative !important;
+                top: 0 !important;
+                
+                &:not(:first-child) {
+                    margin: 30px 0 0 0 !important;
+                }
+
+                &:not(:last-child) {
+                    .sub-menu {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .menu-expand-btn.fa {
+            top: -12px;
+            display: block;
+        }
     }
 }

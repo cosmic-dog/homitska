@@ -755,6 +755,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 		$isParent = !$item->menu_item_parent;
 		$classNames = '';
 		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
+		$hasChildren = in_array('menu-item-has-children', $item->classes);
 				
 		if($isParent) {
 			++$GLOBALS['menu-animation-timeout'];
@@ -763,7 +764,7 @@ class Homitska_Walker extends Walker_Nav_Menu {
 
 		if ($item->type_label != 'Language switcher') {
 	
-			$output .= '<li>';
+			$output .= '<li class="' . implode(" ", $item->classes) . '">';
 
 			if( $permalink && $permalink != '#' ) {
 				$output .= '<a href="' . $permalink . '"' . $classNames . '><span>';
@@ -772,7 +773,10 @@ class Homitska_Walker extends Walker_Nav_Menu {
 			$output .= $title;
 
 			if( $permalink && $permalink != '#' ) {
-				$output .= '</a></span>';
+				$output .= '</span></a>';
+
+				if ($hasChildren) 
+					$output .= '<button class="menu-expand-btn trans no-animation fa"></button>';
 			} 
 		}
 	}
@@ -814,6 +818,7 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 		$permalink = $item->url;
 		$isParent = !$item->menu_item_parent;
 		$isSocialMenu = $permalink == '#social-menu';
+		$hasChildren = in_array('menu-item-has-children', $item->classes);
 		$currentClass = in_array('current-menu-item', $item->classes) || in_array('current-menu-parent', $item->classes) ? 'active' : '';
 				
 		if ($item->type_label != 'Language switcher') {
@@ -842,10 +847,29 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 				$output .= '<a href="' . $permalink . '">';
 				$output .= $title;
 				$output .= '</a>';
+
+				if ($hasChildren) 
+					$output .= '<button class="menu-expand-btn trans no-animation fa"></button>';
 			}
 		}
 	}
 }
+
+
+/**
+ * Disable Script and Styles
+ */
+function shapeSpace_disable_scripts_styles() {
+	
+	//wp_dequeue_script('owl_carousel_js');
+	wp_dequeue_style('owl_animate_css');
+	wp_dequeue_style('owl_carousel_css');
+	//wp_dequeue_style('owl_theme_css');
+}
+
+add_action('get_footer', 'shapeSpace_disable_scripts_styles');
+//add_action('wp_print_styles', 'shapeSpace_disable_scripts_styles', 100);
+//add_action('wp_enqueue_scripts', 'shapeSpace_disable_scripts_styles', 100);
 
 
 /**

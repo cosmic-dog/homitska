@@ -5,13 +5,13 @@
     
     ul {
         width: 100%;
-        display: table;
     }
 
     li {
-        width: 33%;
+        width: 31%;
         text-align: left;
-        display: table-cell;
+        display: inline-block;
+        vertical-align: top;
         padding: 20px 0 20px 50px;    
 
         &:first-child {
@@ -33,5 +33,23 @@
 
     span {
         font-size: 19px;
+    }
+}
+
+@include mq-1300 {
+	.b-experience li {
+        padding-left: 40px !important;
+    }
+}
+
+@include mq-800 {
+	.b-experience {
+        padding-top: 40px;
+
+        li {
+            width: 100%;
+            padding-left: $mobile-padding !important;
+            padding-right: $mobile-padding;
+        }
     }
 }

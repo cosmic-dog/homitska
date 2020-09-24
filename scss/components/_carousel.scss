@@ -1,0 +1,130 @@
+.owl-carousel.sa_owl_theme .owl {
+    &-stage {
+        display: flex;
+    }
+
+    &-item {
+        float: none;
+        display: flex;
+        flex: 1 0 auto;
+       
+        &:nth-child(even) {
+            background: $bg-color-lighter-grey;
+        }
+
+        &:nth-child(odd) {
+            background: $bg-color-light-grey;
+        }
+
+        & > div {
+            width: 100%;
+        }
+
+        iframe, .carousel-image-wrap {
+            max-width: 100%;
+            margin: 20px 0 14px;
+        }
+
+        .carousel-image-wrap {
+            height: 326px;
+            overflow: hidden;
+
+            img {
+               width: 100%;
+            }
+        }
+
+        .lead {
+            margin-top: -16px;
+            padding-bottom: 18px;
+        }
+
+        p {
+            font-size: 15px;
+            font-style: italic;
+        }
+    }
+}
+
+// .owl-nav button.owl-prev
+
+.psac-slider-and-carousel, .sa_owl_theme.owl-carousel {
+    .owl-nav {
+        span.owl-prev, span.owl-next, button.owl-prev, button.owl-next  {
+            width: 40px !important;
+            height: 200px !important;
+            outline: none;
+            transform: translateY(-36%);
+            border: 0;
+            @include font-awesome;
+            font-size: 46px;
+
+            span {
+                display: none;
+            }
+
+            &:before {
+                position: absolute;
+                top: 70px;
+                opacity: .7;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .owl-prev {
+            left: 0 !important;
+
+            &:before {
+                content: '\f104';
+                left: 8px;
+            }
+        }
+
+        .owl-next {
+            right: 0 !important;
+            &:before {
+                content: '\f105';
+                right: 7px;
+            }
+        }
+    }
+}
+
+.psac-slider-and-carousel {
+    .owl-nav {
+        span.owl-prev, span.owl-next  { 
+            opacity: .3;
+            background: rgba($bg-color-pink-grey, .7) !important;
+            
+            &:hover {
+                opacity: .8;
+                color: $text-color;
+                background: rgba($bg-color-pink-grey, .7) !important;
+            }
+        }
+
+    }
+
+}
+
+.sa_owl_theme.owl-carousel {
+    .owl-nav {
+        button.owl-prev, button.owl-next  { 
+            top: 26%;
+            opacity: .4;
+            border: 1px solid $text-color;
+            background: $bg-color-pink-grey !important;
+            
+            &:hover {
+                opacity: .9;
+                color: $text-color;
+                background: rgba($bg-color-pink-grey, .7) !important;
+            }
+        }
+
+    }
+
+}

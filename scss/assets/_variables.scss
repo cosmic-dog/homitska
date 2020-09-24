@@ -6,8 +6,8 @@ $text-color-light: #a7a7a7;
 
 $bg-color: #fff;
 $bg-color-light-grey: #f2f2f2;
-$bg-color-lighter-grey: #F9F9F9;
-$bg-color-pink-grey: #FAF5F6;
+$bg-color-lighter-grey: #f9f9f9;
+$bg-color-pink-grey: #faf5f6;
 $footer-bg-color: $text-color;  //#fcfcfc;
 
 $link-color: #888;
@@ -19,6 +19,7 @@ $social-icon-bg: #444;
 $border-color: #d6d6d6;
 
 $error-color: #ff0000;
+$success-color: #28a745;
 
 $btn-bg: $text-color;
 $btn-bg-trans: $bg-color;
@@ -27,4 +28,5 @@ $line-height: 1.6;
 
 $h-padding-top: 1.4em;
 $h-padding-bottom: .7em;
-$side-padding: 20px;
+
+$mobile-padding: 20px; 

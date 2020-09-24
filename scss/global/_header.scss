@@ -1,27 +1,26 @@
 .header {	
-    position: relative;
-    width: 100%;
+	width: 100%;
     opacity: 0;
     text-align: center;
     visibility: hidden;
     animation-fill-mode: both;
+	background-color:$bg-color;
+	border-bottom: 1px solid $border-color;
+    position: relative;
     z-index: 900;
 
     &-inner {
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        border-bottom: 1px solid #D6D6D6;
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
     }
 
 	&-top {
-        width: 80em;
-        padding-top: 1em;
-        padding-bottom: .7em;
-        border-bottom: 1px solid #D6D6D6;
+		width: 100%;
+		padding-top: 16px;
+		padding-bottom: 12px;
+        border-bottom: 1px solid $border-color;
         display: table;
-        margin: auto;
         
         > * {
             display: table-cell;
@@ -107,18 +106,14 @@
 	&_logo {
 		&-link {
 			text-align: center;
-			width: 28.5em;
 		}
-		&-img {
-			width: 21.125em;
-		}
+
 		&-svg {
+			width: 338px;
+			height: 80px;
 			display: block;
 			margin: auto;
-			height: 5em;
-			width: 21.125em;
 			visibility: hidden;
-			transition: all 0s;
 			transition: all linear .5s;
 		}
 		&-line {
@@ -142,139 +137,213 @@
 			color: #666;
 			transition: all linear .5s;
 		}
+
 		&-mobile {
 			display: none;
-			max-width: 2em;
+			text-align: center;
 		}
 	}
 
 	&-btn-wrap {
 		text-align: right;
+
+		&.mobile {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0;
+			display: none;
+		}
 	}
 
-	&.fixed {
-		position: fixed;
-		top: 0;
+	&-menu-btn {
+		min-width: 65px;
+		line-height: 40px;
+		display: none;
+		float: right;
+		text-align: center;
+		padding: 0 10px;
+		margin: 9px 0 0 20px;
+		z-index: 10;
+		opacity: .7;
+		outline: none;
 
-		* {
-			transition: all ease-in-out .3s;
+		i {
+			display: none;
+			font-size: 22px;
 		}
 
-		.header-top {
-			padding: 8px 0;
-		}
+		&.active {
+			opacity: .5;
+			border: none;
+			right: -25px;
 
-		.header-menu>ul>li {
-			padding: 8px 0;
-		}
-
-		.header_logo {
-			&-svg {
-				height: 3em;
-				transform: translateY(6px);
+			i {
+				display: inline;
+				position: relative;
+				top: 4px;
 			}
 
-			&-caption, &-line {
+			span {
 				display: none;
 			}
-		}
-
-		.btn-small {
-			line-height: 3;
-			padding: 0 2em;
 		}
 	}
 }
 
 
 
-@media(max-width: 1000px){
+@include mq-1300 {
 	.header {
-		&_top {
-			&-wrapper {
-				width: 100%;
-			}
+		&-top {
+			padding-left: 20px;
+			padding-right:20px;
 		}
-		&_logo {
-			&-link {
-				width: 42%;
-			}
+	}
+}
+
+@include mq-1150 {
+	.header {
+
+		&_logo-svg {
+			width: 250px;
 		}
-		&_lang {
-			width: 10%;
+
+		.btn-small {
+			padding-left: 10px;
+			padding-right: 10px;
 		}
-		&_phone {
-			width: 20%;
+	}
+}
+
+@include mq-960 {
+	.header {
+		&_logo-svg {
+			width: 240px;
 		}
-		&_social {
+
+		&-phone {
 			display: none;
 		}
 	}
 }
 
-
-@media(max-width: 766px){
+@include mqm-800 {
+	body {
+		&.sticky {
+			padding-top: 100px;
+		}
+	}
+	
 	.header {
-		&_lang {
-			font-size: 10px;
-		}
-		&_logo {
-			&-link {
-				font-size: 10px;
+		&.fixed {
+			position: fixed;
+			top: 0;
+
+			* {
+				transition: all ease-in-out .3s;
 			}
-		}
-		&_phone {
-			font-size: 10px;
+
+			.header-top {
+				padding: 8px 0;
+			}
+
+			.header-menu>ul>li {
+				padding: 8px 0;
+			}
+
+			.header_logo {
+				&-svg {
+					height: 3em;
+					transform: translateY(6px);
+				}
+
+				&-caption, &-line {
+					display: none;
+				}
+			}
+
+			.btn-small {
+				line-height: 3;
+				padding: 0 2em;
+			}
 		}
 	}
 }
 
-@media(max-width: 670px){
+@include mq-800 {
 	.header {
-		&_logo {
-			&-link {
-				display: none;
-			}
-			&-mobile {
-				display: block;
-			}
+		&-top {
+			height: 60px;
+			display: block;
+			padding: 0 16px;
+			border-bottom: 0;
 		}
-		&_button {
-			margin-right: .5em;
-		}
-		&_phone {
-			width: 15em;
-		}
+
 		&_lang {
 			width: auto;
-			font-size: 1.2em;
-		}
-	}
-}
+			display: block;
+			float: right;
+			margin-top: 19px;
+			padding: 0;
 
-@media(max-width: 500px){
-	.header {
-		&_button {
-			&-wrapper {
-				font-size: 11px;
-			}
-			letter-spacing: 0
-		}
-		&_phone {
-			letter-spacing: 0;
-			width: 12em;
-		}
-	}
-}
-
-@media(max-width: 400px){
-	.header {
-		&_phone {
-			padding-left: .5em;
-			width: 10em;
 			&:before {
 				display: none;
 			}
+
+			&-arrow {
+				display: none;
+			}
 		}
+
+		&_logo-link {
+			display: block;
+			float: left;
+			margin-top: 16px;
+
+			span, p {
+				display: none;
+			}
+		}
+
+		&_logo-svg {
+			width: 180px;
+			height: auto;
+		}
+		
+		&-btn-wrap {
+			width: 200px;
+		}
+
+
+		&_social {
+			display: none;
+		}
+
+		&-btn-wrap {
+			display: none;
+
+			&.mobile {
+				display: block;
+			}
+		}
+
+		&-menu-btn {
+			display: block;
+		}
+	}
+}
+
+@include mq-350 {
+	.header {
+		&_logo-mobile {
+			display: block;
+			float: left;
+			margin-top: 10px;
+		}
+
+		&_logo-link { 
+			display: none;
+		}
+
 	}
 }

@@ -1,5 +1,21 @@
 .b-main {
     height: 500px;
+
+    &.alt {
+        height: 600px;
+
+        .b-main-a {
+            width: 38%;
+        }
+
+        .b-main-b {
+            width: 62%;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
     
     &-a, &-b {
         height: 100%;
@@ -64,6 +80,103 @@
 
             div {
                 text-align: left;
+            }
+        }
+    }
+
+    &:last-child {
+        img {
+            margin-top: 0;
+        }
+    }
+}
+
+@include mq-1300 {
+    .b-main {
+        &:nth-child(odd) {
+            .b-main-b {
+                padding: 0 30px 0 40px;
+            }
+        }
+
+        &:nth-child(even) {
+            .b-main-b {
+                padding: 0 40px 0 30px;
+            }
+        }
+    }
+}
+
+@include mq-960 {
+    .b-main {
+        &.alt {
+            height: 650px;
+        }
+    }
+}
+
+@include mq-800 {
+    .b-main {
+        height: auto !important;
+
+        h1 {
+            font-size: 35px;
+            letter-spacing: 5px;
+        }
+
+        &-a, &-b {
+            width: 100% !important;
+            height: auto;
+            float: none !important;
+        }
+
+        &-a {
+            
+            padding: 20px 10px 16px;
+            text-align: center !important;
+
+            img {
+                width: auto;
+                max-height: 300px;
+                margin: 0 !important;
+            }
+        }
+
+        &-b {
+            display: block;
+            padding: 30px $mobile-padding !important; 
+
+            div {
+                display: block;
+            }
+        }
+    }
+}
+
+@include mq-560 {
+    .b-main {
+        p {
+            position: relative;
+        }
+
+        .h-icon-more {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 17px;
+            position: absolute;
+            bottom: -40px;
+            top: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-left: 0;
+
+            &:before {
+                left: 35px;
+            }
+
+            &:hover:before {
+                left: 1px;
             }
         }
     }

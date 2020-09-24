@@ -1,0 +1,63 @@
+.b-landing {
+    &-top {
+        .title-wrap {
+            padding: 40px;
+            text-align: center;
+            background: rgba($bg-color-lighter-grey, .7);
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        h4 {
+            font-size: 22px;
+            padding-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 2;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@include mq-1150 {
+	.b-landing-top {
+        .title-wrap {
+            width: 90%;
+        }
+    }
+}
+
+@include mq-560 {
+	.b-landing-top {
+        background-position: 66%;
+        
+        .title-wrap {
+            width: 100%;
+            padding: 40px 20px;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translate(0, 0);
+
+            button, .btn {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h4 {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+        }
+    }
+}

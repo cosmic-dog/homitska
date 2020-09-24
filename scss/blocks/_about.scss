@@ -1,6 +1,6 @@
 .b-about {
     background: $bg-color-lighter-grey;
-
+    
     &-left, &-right {
         display: inline-block;
         vertical-align: middle;
@@ -20,22 +20,30 @@
     }
 
     &-right {
-        padding-left: 6em;
+        width: 50%;
+        padding: 20px 0 20px 96px;
 
         p {
-            width: 30em;
+            width: 100%;
+            max-width: 450px;
             font-size: 1.2em;
             line-height: 1.6;
+        }
+    }
+
+    &.smallp {
+        p {
+            font-size: 15px;
         }
     }
 }
 
 .b-about-two {
-    height: 42em;
+    height: 670px;
 
     &-left, &-right {
-        position: relative;
         height: 100%;
+        position: relative;
         display: inline-block;
         vertical-align: top;
     }
@@ -43,11 +51,11 @@
     &-left {
         width: 65%;
         text-align: right;
-        padding-top: 7.6em;
-        padding-right: 4em;
+        padding: 120px 64px 0 110px;
 
         ul {
-            width: 45em;
+            width: 100%;
+            max-width: 720px;
             display: inline-block;
         }
     }
@@ -55,23 +63,120 @@
     &-right {
         width: 35%;
         margin-left: -7px;
-        //background: linear-gradient(to top, $bg-color-pink-grey 66%, $bg-color 0%); 
-
+        
         img {
                 max-height: 100%;
                 position: absolute;
                 z-index: 10;
-                top: -2em;
-                left: -1em;
+                top: -24px;
+                left: -16px;
         }
     }
 
     &-bg {
+        width: 100%;
+        max-width: 608px;
+        height: 480px;
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 38em;
-        height: 30em;
         background-color: $bg-color-pink-grey;
+    }
+}
+
+@include mq-1150 {
+    .b-about-two {
+        &-left {
+            padding-top: 30px;
+        }
+    }
+}
+
+@include mq-960 {
+    .b-about {
+        &-right {
+            padding-left: 50px;
+        }
+    }
+
+    .b-about-two {
+        &-left {
+            width: 75%;
+            padding-right: 20px;
+            padding-left: 84px;
+        }
+
+        &-right {
+            width: 25%;
+
+            img {
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        &-bg {
+            height: 103%;
+        }
+    }
+}
+
+@include mq-800 {
+    .b-about {
+        &-left {
+            width: 32%;
+        }
+
+        &-right {
+            width: 66%;
+        }
+    }
+
+    .b-about-two {
+        height: auto;
+
+        &-left {
+            width: 100%;
+            float: none;
+            padding-bottom: 30px;
+        }
+
+        &-right {
+            display: none;
+        }
+
+        .h-list {
+            margin-bottom: 0;
+
+            li:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include mq-560 {
+	.b-about {
+        &-left {
+            width: 100%;
+            padding: 20px 10px 16px;
+            text-align: center;
+            
+            img {
+                width: auto;
+                max-height: 300px;
+                margin: 0;
+            }
+        }
+        
+        &-right {
+            width: 100%;
+            padding: 30px $mobile-padding;
+
+            p {
+                max-width: 100%;
+            }
+        }
     }
 }

@@ -11,7 +11,7 @@
  $hasLink =  !empty(block_field( 'url', false ));
 ?>
 
-<div class="block b-main" style="background: <?php block_field( 'bg-color' ); ?>">
+<div class="block b-main <?php echo block_value('className'); ?>" style="background: <?php block_field( 'bg-color' ); ?>">
     <div class="b-main-a" style="background: <?php block_field( 'image-bg-color' ); ?>">
         <?php if ($hasLink) { ?>
             <a href="<?php block_field( 'url' ); ?>">

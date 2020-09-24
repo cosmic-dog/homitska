@@ -3,3 +3,54 @@
 
     //all ease-in-out .2s;;
 }
+
+@mixin ellipsis($linesNo: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $linesNo;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin font-awesome() {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin mq-1300 {
+    @media (max-width: 1300px) { @content; }
+}
+
+@mixin mq-1150 {
+    @media (max-width: 1150px) { @content; }
+}
+
+@mixin mq-960 {
+    @media (max-width: 960px) { @content; }
+}
+
+@mixin mq-800 {
+    @media (max-width: 800px) { @content; }
+}
+
+@mixin mqm-800 {
+    @media (min-width: 801px) { @content; }
+}
+
+@mixin mq-680 {
+    @media (max-width: 680px) { @content; }
+}
+
+@mixin mq-560 {
+    @media (max-width: 560px) { @content; }
+}
+
+@mixin mqm-560 {
+    @media (min-width: 561px) { @content; }
+}
+
+@mixin mq-350 {
+    @media (max-width: 350px) { @content; }
+}

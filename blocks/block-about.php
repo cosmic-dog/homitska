@@ -10,7 +10,7 @@
 ?>
 
 
-<div class="block b-about">
+<div class="block b-about <?php echo block_value('className'); ?>">
     <div class="b-about-left">
         <img class="wow fadeInLeft" src="<?php block_field( 'image' ); ?>" alt="<?php block_field( 'heading' ); ?>" data-wow-delay="0.2s">
     </div>
