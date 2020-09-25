@@ -1,10 +1,45 @@
-document.addEventListener( 'wpcf7mailsent', function( event ) {
-    window.location = '/spasibo/';
-}, false );
+H.form = (function() {
+    let cmButton =$('.contact-method li');
 
-document.addEventListener( 'wpcf7mailfailed', function( event ) {
-    //window.location = 'http://example.com/';
-}, false );
+    function contactMethod() {
+        let btn = $(this),
+            parent = btn.parents('.form-row'),
+            numberField = parent.find('.twrap'),
+            accField = parent.find('.taccount')
+
+        btn.addClass('active').siblings().removeClass('active');
+        
+        if (btn.data('field') == 'number') {
+            numberField.show();
+            accField.hide();
+        }
+        else {
+            numberField.hide();
+            accField.show();
+        }
+    }
+
+    function wpcfFormAction() {
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+            window.location = '/spasibo/';
+        }, false );
+        
+        document.addEventListener( 'wpcf7mailfailed', function( event ) {
+            //window.location = 'http://example.com/';
+        }, false );
+    };
+    
+    function init() {
+        wpcfFormAction();
+        cmButton.click(contactMethod)
+    }
+
+    return {
+        init: init
+    }
+})();
+
+
 
 
 // wpcf7invalid — Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input.

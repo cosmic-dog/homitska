@@ -89,9 +89,42 @@ input[type=number] {
         content: '+';
         color: $text-color;
         position: absolute;
-        top: 0;
+        top: -3px;
         left: 4px;
         z-index: 2;
+    }
+}
+
+.taccount {
+    display: none;
+}
+
+.contact-method {
+    text-align: center;
+    margin-bottom: 20px;
+
+    li {
+        font-size: 14px;
+        display: inline-block;
+        padding: 6px;
+
+        &:hover:not(.active) {
+            cursor: pointer;
+            background: $bg-color-light-grey;
+        }
+
+        &.active {
+            background: $bg-color-pink-grey;
+        }
+    
+        i {
+            font-size: 34px;
+        }
+
+        span {
+            display: block;
+            margin-top: 10px;
+        }
     }
 }
 
@@ -101,10 +134,12 @@ input[type=number] {
 }
 
 .wpcf7-form {
-    //failed
-    //invalid
     h3 {
         padding-bottom: 0;
+    }
+
+    input:not(.tcode):not(.tnumber) {
+        text-align: center;
     }
     
     .wpcf7-not-valid-tip {
