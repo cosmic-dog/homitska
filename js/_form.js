@@ -1,8 +1,8 @@
 H.form = (function() {
-    let cmButton =$('.contact-method a');
+    var cmButton = $('.contact-method a');
 
     function contactMethod(e) {
-        let btn = $(this),
+        var btn = $(this),
             parent = btn.parents('.form-row'),
             numberField = parent.find('.twrap'),
             accField = parent.find('.taccount'),
