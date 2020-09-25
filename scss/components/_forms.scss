@@ -103,10 +103,15 @@ input[type=number] {
     text-align: center;
     margin-bottom: 20px;
 
-    li {
+    a {
         font-size: 14px;
         display: inline-block;
         padding: 6px;
+        color: $text-color;
+
+        &:not(:first-child) {
+            margin-left: 5px;
+        }
 
         &:hover:not(.active) {
             cursor: pointer;

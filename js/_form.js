@@ -1,13 +1,14 @@
 H.form = (function() {
-    let cmButton =$('.contact-method li');
+    let cmButton =$('.contact-method a');
 
-    function contactMethod() {
+    function contactMethod(e) {
         let btn = $(this),
             parent = btn.parents('.form-row'),
             numberField = parent.find('.twrap'),
             accField = parent.find('.taccount'),
             methodLabel = btn.find('span').text();
         
+        e.preventDefault();
         btn.addClass('active').siblings().removeClass('active');
         parent.find('.tmethod').val(methodLabel);
         
