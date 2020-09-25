@@ -11,7 +11,7 @@ H.form = (function() {
         btn.addClass('active').siblings().removeClass('active');
         parent.find('.tmethod').val(methodLabel);
         
-        if (btn.data('field') == 'number') {
+        if (btn.attr('data-field') == 'number') {
             numberField.show();
             accField.hide();
         }
