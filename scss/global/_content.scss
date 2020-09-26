@@ -63,6 +63,13 @@ main {
 
 }
 
+#error-page {
+    .title-wrap {
+        max-width: 600px;
+        top: 40%;
+    }
+}
+
 .middle, .wp-block-group {
     width: 100%;
     max-width: 900px;

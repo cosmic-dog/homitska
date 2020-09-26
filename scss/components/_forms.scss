@@ -108,11 +108,8 @@ input[type=number] {
         display: inline-block;
         padding: 6px;
         color: $text-color;
-
-        &:not(:first-child) {
-            margin-left: 5px;
-        }
-
+        margin: 0 3px;
+        
         &:hover:not(.active) {
             background: $bg-color-light-grey;
         }
