@@ -1,8 +1,8 @@
 H.form = (function() {
-    var cmButton = $('.contact-method a');
+    let cmButton = $('.contact-method a');
 
     function contactMethod(e) {
-        var btn = $(this),
+        let btn = $(this),
             parent = btn.parents('.form-row'),
             numberField = parent.find('.twrap'),
             accField = parent.find('.taccount'),
@@ -12,7 +12,7 @@ H.form = (function() {
         btn.addClass('active').siblings().removeClass('active');
         parent.find('.tmethod').val(methodLabel);
         
-        if (btn.attr('data-field') == 'number') {
+        if (btn.data('field') == 'number') {
             numberField.show();
             accField.hide();
         }

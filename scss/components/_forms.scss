@@ -114,7 +114,6 @@ input[type=number] {
         }
 
         &:hover:not(.active) {
-            cursor: pointer;
             background: $bg-color-light-grey;
         }
 
