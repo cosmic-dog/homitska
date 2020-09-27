@@ -24,11 +24,35 @@ H.form = (function() {
 
     function wpcfFormAction() {
         document.addEventListener( 'wpcf7mailsent', function( event ) {
+            let form = $(event.target),
+                formIdHolder = form.find('[data-formid]'),
+                formNameHolder = form.find('[data-formname]');
+
+            if (formIdHolder.length) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'formSubmissionSuccess',
+                    formId: formIdHolder.data('formid'),
+                    formName: formNameHolder.data('formname')
+                });
+            }
+
             window.location = '/spasibo/';
         }, false );
         
         document.addEventListener( 'wpcf7mailfailed', function( event ) {
-            //window.location = 'http://example.com/';
+            let form = $(event.target),
+                formIdHolder = form.find('[data-formid]'),
+                formNameHolder = form.find('[data-formname]');
+
+            if (formIdHolder.length) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'formSubmissionFail',
+                    formId: formIdHolder.data('formid'),
+                    formName: formNameHolder.data('formname')
+                });
+            }
         }, false );
     };
     
@@ -41,12 +65,3 @@ H.form = (function() {
         init: init
     }
 })();
-
-
-
-
-// wpcf7invalid — Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because there are fields with invalid input.
-// wpcf7spam — Fires when an Ajax form submission has completed successfully, but mail hasn’t been sent because a possible spam activity has been detected.
-// wpcf7mailsent — Fires when an Ajax form submission has completed successfully, and mail has been sent.
-// wpcf7mailfailed — Fires when an Ajax form submission has completed successfully, but it has failed in sending mail.
-// wpcf7submit — Fires when an Ajax form submission has completed successfully, regardless of other incidents.
