@@ -3,7 +3,7 @@ H.menu = (function () {
         menuBtn = $('.header-menu-btn'),
         expandBtn = $('.menu-expand-btn'),
         langBtn = $('.header-lang-btn'),
-        langs = $('#menu-languages');
+        langs = $('.header_lang-ul');
 
     function openMenu() {
         menu.toggle();

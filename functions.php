@@ -788,12 +788,10 @@ class Homitska_Lang_Walker extends Walker_Nav_Menu {
 		$permalink = $item->url;
 		$currentClass = in_array('current-lang', $item->classes) ? 'active' : '';
 
-		if ($item->type_label == 'Language switcher') {
-			$output .= '<li class="header_lang-li ' . $currentClass . '">';
-			$output .= '<a href="' . $permalink . '">';
-			$output .= $title;
-			$output .= '</a>';
-		}
+        $output .= '<li class="header_lang-li ' . $currentClass . '">';
+        $output .= '<a href="' . $permalink . '">';
+        $output .= $title;
+        $output .= '</a>';
 	}
 }
 
