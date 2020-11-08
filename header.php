@@ -74,10 +74,12 @@
 									)
 								);	
 							}
-						?>
-						<svg class="header_lang-arrow" viewBox="0 0 30 30">
-							<g><path d="M5,13 l10,8 l10,-8"></path></g>
-						</svg>
+                        ?>
+                        <a href="#" class="header-lang-btn">
+                            <svg class="header_lang-arrow" viewBox="0 0 30 30">
+                                <g><path d="M5,13 l10,8 l10,-8"></path></g>
+                            </svg>
+                        </a>
 					</div>
 
 					<a href="/" class="header_logo-link">
