@@ -22,10 +22,17 @@ H.menu = (function () {
         langs.toggleClass('active');
     };
 
+    function setActiveLang(params) {
+        let activeLang = langs.find('.active');
+
+        langs.prepend(activeLang)
+    }
+
     function init() {
         menuBtn.click(openMenu);
         expandBtn.click(expandSubmenu);
         langBtn.click(langMenu);
+        setActiveLang();
     };
 
     return {

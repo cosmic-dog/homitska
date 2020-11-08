@@ -82,6 +82,7 @@
 			list-style: none;
 			height: 1em;
             width: 1.6em;
+            margin-right: -3px;
 
             &.active {
                 li {
@@ -311,10 +312,6 @@
 			padding: 0;
 
 			&:before {
-				display: none;
-			}
-
-			&-arrow {
 				display: none;
 			}
 		}
