@@ -34,11 +34,12 @@
 		</p>
 	</footer>
 
-	<div class="overlay"></div>
-	
+    <div class="overlay"></div>
+    
 	<?php 
-		get_template_part( 'template-parts/modals' );
+        get_template_part( 'template-parts/modals' );
+        get_template_part( 'template-parts/cookies' );
 		wp_footer(); 
-	?>
+    ?>
 </body>
 </html>
