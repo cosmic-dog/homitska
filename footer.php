@@ -29,6 +29,12 @@
 			?>
 		</nav>
 
+        <?php
+            if(is_active_sidebar('sidebar-1')){
+                dynamic_sidebar('sidebar-1');
+            }
+        ?>
+
 		<p class="footer-copyright">
 			&copy; <?php echo date('Y') ?> Elga Homitska
 		</p>
