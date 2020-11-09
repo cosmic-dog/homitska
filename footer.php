@@ -44,7 +44,11 @@
     
 	<?php 
         get_template_part( 'template-parts/modals' );
-        get_template_part( 'template-parts/cookies' );
+        
+        if(is_active_sidebar('sidebar-2')){
+            dynamic_sidebar('sidebar-2');
+        }
+
 		wp_footer(); 
     ?>
 </body>
