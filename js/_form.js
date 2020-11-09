@@ -25,7 +25,7 @@ H.form = (function() {
 
     function phonetextValidation(e) {
         let key = e.keyCode || e.which;
-        console.log(key);
+        
         if ((key >= 48 && key <= 57) || key == 46 || key == 8 || (key >= 37 && key <=40)) {
             // GO
         }
