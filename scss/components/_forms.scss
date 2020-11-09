@@ -84,15 +84,10 @@ input[type=number] {
 
 .twrap {
     position: relative;
+}
 
-    &:before {
-        content: '+';
-        color: $text-color;
-        position: absolute;
-        top: -3px;
-        left: 4px;
-        z-index: 2;
-    }
+.wpcf7-phonetext {
+    text-align: left !important;
 }
 
 .taccount {
