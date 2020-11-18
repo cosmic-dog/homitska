@@ -43,7 +43,9 @@
     <div class="overlay"></div>
     
 	<?php 
-        get_template_part( 'template-parts/modals' );
+        if(is_active_sidebar('sidebar-modals')){
+           dynamic_sidebar('sidebar-modals');
+        }
         
         if(is_active_sidebar('sidebar-2')){
             dynamic_sidebar('sidebar-2');
