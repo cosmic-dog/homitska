@@ -1105,6 +1105,75 @@ class cookies_widget extends WP_Widget {
         return $instance;
     }
 } 
+
+// H Cities widget
+class cities_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct (
+            // Base ID of your widget
+            'cities_widget', 
+      
+            // Widget name will appear in UI
+            __('_H Cities', 'cookies_widget_domain'), 
+      
+            // Widget description
+            array( 'description' => __( 'Homitska special cities widget', 'cities_widget_domain' ), ) 
+        );
+    }
+      
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        $cities = $instance['cities'];
+        $html = '<div class="footer-cities">';
+
+        if (!empty($cities)) {
+            $citiesArr = explode(',', $cities);
+
+            foreach ($citiesArr as $city) {
+                $html .= '<h5>' . trim($city) . '</h5>';
+            }
+        
+            $html .= '</div>';
+        
+            echo $html;
+        }
+    }
+              
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ))
+            $title = $instance[ 'title' ];
+        else 
+            $title = __( 'New title', 'wpb_widget_domain' );
+
+        if (isset( $instance[ 'cities' ] )) 
+            $cities = $instance[ 'cities' ];
+        else 
+            $cities = 'Enter cities separated by a comma';
+
+        // Widget admin form
+        ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'cities' ); ?>">Cities:</label> 
+            <textarea class="widefat" id="<?php echo $this->get_field_id( 'cities' ); ?>" name="<?php echo $this->get_field_name( 'cities' ); ?>" style="min-height: 90px"><?php echo $cities; ?></textarea>
+        </p>
+    <?php 
+    }
+          
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['cities'] = ( ! empty( $new_instance['cities'] ) ) ? $new_instance['cities'] : '';
+        
+        return $instance;
+    }
+} 
      
      
 // Register and load widgets
@@ -1117,3 +1186,11 @@ function cookies_load_widget() {
     register_widget( 'cookies_widget' );
 }
 add_action( 'widgets_init', 'cookies_load_widget' );
+
+function cities_load_widget() {
+    register_widget( 'cities_widget' );
+}
+add_action( 'widgets_init', 'cities_load_widget' );
+
+
+
