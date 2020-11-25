@@ -7,6 +7,7 @@ H.wpGallery.init();
 H.svg.init();
 H.form.init();
 H.cookies.init();
+H.products.init();
 
 var wowInit = function() {
     if(WOW){

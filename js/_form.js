@@ -66,9 +66,16 @@ H.form = (function() {
             }
         }, false );
     };
+
+    function checkbox() {
+        $('.h-checkbox input').change(function() {
+            $(this).parent().toggleClass('checked');
+        });
+    };
     
     function init() {
         wpcfFormAction();
+        checkbox();
         cmButton.click(contactMethod);
         phonetext.keydown(phonetextValidation);
     }

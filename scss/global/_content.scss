@@ -70,7 +70,7 @@ main {
     }
 }
 
-.middle, .wp-block-group {
+.middle, .wp-block-group:not(.b-product-wrap):not(.b-product-block-wrap) {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
