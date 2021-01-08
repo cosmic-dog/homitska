@@ -57,16 +57,21 @@
     }
 }
 
-@include mq-680 {
-    @media (max-height: 680px) { 
-        .modal {
-            overflow: auto;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            transform: translate(0);
-        }    
-    }
+@media (max-height: 700px), (max-width: 710px) { 
+    .modal {
+        max-width: none;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translate(0);
+
+        &-cross {
+            top: 5px;
+            right: 5px;
+        }
+    }    
 }
 
 @include mq-560 {

@@ -5,6 +5,7 @@ H.modal.init();
 H.formValidation.init();
 H.wpGallery.init();
 H.svg.init();
+H.form.init();
 
 var wowInit = function() {
     if(WOW){

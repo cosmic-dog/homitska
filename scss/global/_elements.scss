@@ -9,6 +9,13 @@ h1, h2, h3, h4 {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
 	font-weight: 400;
+
+	.hl {
+		font-style: inherit;
+		padding: 4px 8px;
+		color: $text-color;
+		background: $text-color-light;
+	}
 }
 
 h1 {

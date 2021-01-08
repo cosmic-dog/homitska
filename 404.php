@@ -1,36 +1,26 @@
 <?php
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying the 404 page.
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @since Homitska 1.0
  */
 
 get_header();
 ?>
 
-<main id="site-content" role="main">
-
-	<div class="section-inner thin error404-content">
-
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
-
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
-
-		<?php
-		get_search_form(
-			array(
-				'label' => __( '404 not found', 'twentytwenty' ),
-			)
-		);
-		?>
-
-	</div><!-- .section-inner -->
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<div id="error-page" class="content-cover">
+	<div class="cover no-margin-bottom" style="background: #faf5f6;">
+		<div class="title-wrap">
+			<h1 class="entry-title">404. <?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
+			<p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p>
+			<div>
+				<a href="/" class="btn"><span>На начало</span></a>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 get_footer();
