@@ -63,21 +63,23 @@
 					?>
 					
 					<div class="header_lang wow fadeInDown" data-wow-delay=".9s" data-active="ru">
-						<?php 
-							if ( has_nav_menu( 'primary' ) ) {
-								wp_nav_menu(
-									array(
-										'theme_location'=> 'primary-nav',
-										'menu_class'    => 'header_lang-ul',
-										'container'		=> '',
-										'walker' 		=> new Homitska_Lang_Walker()
-									)
-								);	
-							}
-						?>
-						<svg class="header_lang-arrow" viewBox="0 0 30 30">
-							<g><path d="M5,13 l10,8 l10,-8"></path></g>
-						</svg>
+						<?php     
+                            if ( has_nav_menu( 'expanded' ) ) {
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location'=> 'expanded',
+                                        'menu_class'    => 'header_lang-ul',
+                                        'container'		=> '',
+                                        'walker' 		=> new Homitska_Lang_Walker()
+                                    )
+                                );	
+                            }
+                        ?>
+                        <a href="#" class="header-lang-btn">
+                            <svg class="header_lang-arrow" viewBox="0 0 30 30">
+                                <g><path d="M5,13 l10,8 l10,-8"></path></g>
+                            </svg>
+                        </a>
 					</div>
 
 					<a href="/" class="header_logo-link">
@@ -108,7 +110,7 @@
 									'walker' 		=> new Homitska_Walker()
 								)
 							);	
-						}
+                        }	
 					?>
 
 					<div class="header-btn-wrap mobile">

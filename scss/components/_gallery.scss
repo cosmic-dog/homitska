@@ -25,72 +25,102 @@
         }
 }
 
-// WP image gallery 
-.wp-block-gallery  {
-    justify-content: center;
-    
-    .blocks-gallery-item {
-        max-height: 90px;
-        flex-grow: 0;
-        align-items: center;
+// WP custom image gallery 
+.custom-gallery {
+    visibility: hidden;
+
+    li {
+        width: 20%;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
         margin-bottom: 30px;
         opacity: .8;
+        position: relative;
          
         &:hover {
             opacity: .6;
             transition: all linear .3s;
         }
 
-        figure {
-            align-items: center;
-        }
-        
-        figcaption {
-            background: transparent;
+        a {
+            position: absolute;
             top: 0;
             left: 0;
-
-            a {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                text-indent: -99999px;
-            }
+            right: 0;
+            bottom: 0;
+            text-indent: -99999px;
         }
 
         img {
+            width: auto;
+            height: auto;
             max-width: 200px;
-            max-height: 100%;
-            width: auto !important;
-            height: auto !important;
+            max-height: 90px;   
         }
     }
 }
 
 @include mq-1150 {
-    .wp-block-gallery  {
-        .blocks-gallery-item {
-            width: calc((100% - 64px)/3) !important;
+    // .wp-block-gallery  {
+    //     .blocks-gallery-item {
+    //         width: calc((100% - 64px)/3) !important;
+    //     }
+    // }
+
+    .custom-gallery {
+        li {
+            width: 25%;
+        }
+    }
+}
+
+@include mq-960 {
+    .custom-gallery {
+        li {
+            img {
+                max-height: 50px;
+            }
         }
     }
 }
 
 @include mq-800 {
-    .wp-block-gallery  {
-        .blocks-gallery-item {
-            width: calc((100% - 64px)/2) !important;
+    // .wp-block-gallery  {
+    //     .blocks-gallery-item {
+    //         width: calc((100% - 64px)/2) !important;
+    //     }
+    // }
+
+    .custom-gallery {
+        li {
+           width: 33%;
+        }
+    }
+}
+
+@include mq-680 {
+    .custom-gallery {
+        li {
+            img {
+                max-height: 40px;
+            }
         }
     }
 }
 
 @include mq-560 {
-    .wp-block-gallery  {
-        margin-left: 30px;
+    // .wp-block-gallery  {
+    //     margin-left: 30px;
 
-        .blocks-gallery-item {
-           max-height: 40px;
+    //     .blocks-gallery-item {
+    //        max-height: 40px;
+    //     }
+    // }
+
+    .custom-gallery {
+        li {
+           width: 50%;
         }
     }
 

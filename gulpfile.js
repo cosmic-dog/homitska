@@ -1,4 +1,5 @@
 let gulp = require('gulp'),
+    order = require('gulp-order'),
     sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),
     smap = require('gulp-sourcemaps'),
@@ -11,6 +12,7 @@ const { logError } = require('gulp-sass');
 gulp.task('sass', function(cb) {
     gulp
         .src('scss/*.scss')
+        .pipe(order())
         .pipe(smap.init())
         .pipe(sass())
         .pipe(cleanCSS())
@@ -27,6 +29,7 @@ gulp.task('sass', function(cb) {
 gulp.task('js', function(cb) {
     gulp
         .src('js/*.js')
+        .pipe(order())
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(
