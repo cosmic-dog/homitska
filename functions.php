@@ -1043,7 +1043,7 @@ class cookies_widget extends WP_Widget {
 	        <p><?php echo $text; ?></p>
 	        <div class="btn-wrap">
   	        <button id="accept-cookies" class="trans btn-small"><span><?php echo $allowBtnLabel; ?></span></button>
-                <a href="https://www.google.com/" class="btn trans btn-small"><span><?php echo $declineBtnLabel; ?></span></a>
+            <!-- a href="https://www.google.com/" class="btn trans btn-small"><span><?php echo $declineBtnLabel; ?></span></a -->
  	        </div>
         </div>
 

@@ -3,18 +3,12 @@ $produck-padding: 14px;
 .b-product {
     padding: $produck-padding;
     padding-bottom: 80px;
-    margin-top: 100px;
     margin-bottom: 70px;
     display: inline-block;
     border: 1px solid $border-color;
-    cursor: pointer;
     font-size: 15px;
     position: relative;
     @include btn-animation;
-    
-    &:hover {
-        background: $bg-color-light-grey;
-    }
 
     &-wrap {
         & > div {
@@ -69,77 +63,48 @@ $produck-padding: 14px;
     }
 }
 
-.b-product-block {
-    position: relative;
-    padding: 10px 30px;
-    border-bottom: 1px solid $border-color;
-    @include btn-animation;
+.b-product-consent {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    display: none;
 
-    &:first-child {
-        border-top: 1px solid $border-color;
+    h4.lead {
+        font-size: 22px;
+        margin-top: 0;
     }
 
-    &:nth-child(odd) {
-        background: $bg-color-pink-grey;
-    }
+    ul {
+        list-style-type: none;
 
-    &:nth-child(even) {
-        background: $bg-color-lighter-grey;
-    }
+        li {
+            margin-bottom: 14px;
 
-    &-wrap {
-        width: 100%;
-        max-width: 700px;
-        padding-left: $mobile-padding;
-        padding-right: $mobile-padding;
-        display: none;
-        margin: 0 auto 70px auto;
-    }
+        }
 
-    .h-checkbox {
-        position: absolute;
-        top: 15px;
-        left: 30px;
-    }
+        .h-checkbox, a {
+            display: inline-block;
+            vertical-align: middle;
+        }
 
-    &-info {
-        padding-left: 60px;
-    }
-
-    &-price {
-        float: right;
-        font-weight: bold;
-        transform: translateY(14px);
-    }
-
-    &-name {
-        margin-bottom: 0;
-    }
-}
-
-.b-product-blocks-header {
-    padding: 10px 30px;
-
-    h4 {
-        font-weight: bold;
-        float: left;
-        padding: 0;
-
-        &:nth-child(2) {
-            float: right;
+        .h-checkbox {
+            margin-right: 14px;
         }
     }
-}
+   
+    .btn-wrap {
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.b-product-blocks-total {
-    h4 {    
-        font-weight: bold;
-        font-size: 18px;
-        text-align: right;
-        padding-right: 30px;
-        margin-top: 10px;
+    .link-tip {
+        margin: 14px 0 0 0;
+        font-size: 14px;
+        font-style: italic;
     }
 }
+
+
 
 @include mq-800 {
     .b-product {
@@ -159,24 +124,24 @@ $produck-padding: 14px;
     }
 }
 
-@include mq-560 {
-    .b-product{
-        &-blocks {
-            &-header {
-                h4 {
-                    max-width: 126px;
+// @include mq-560 {
+//     .b-product{
+//         &-blocks {
+//             &-header {
+//                 h4 {
+//                     max-width: 126px;
 
-                    &:nth-child(2) {
-                        text-align: right;
-                    }
-                }
-            }
+//                     &:nth-child(2) {
+//                         text-align: right;
+//                     }
+//                 }
+//             }
             
-            &-total {
-                button {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
+//             &-total {
+//                 button {
+//                     width: 100%;
+//                 }
+//             }
+//         }
+//     }
+// }
