@@ -19,7 +19,7 @@ if (!empty($bgColor)) {
 }
 ?>
 
-<div class="b-paragraph-heading <?php echo $bgColorClass; ?> <?php echo block_value('className'); ?>" style="text-align: <?php block_field('text-align'); ?>;"> 
+<div class="b-paragraph-heading middle <?php echo $bgColorClass; ?> <?php echo block_value('className'); ?>" style="text-align: <?php block_field('text-align'); ?>;"> 
     <h3 class="wow <?php block_field('heading-animation'); ?>" data-wow-delay="<?php block_field('heading-animation-delay'); ?>s"><?php block_field('heading'); ?></h3>
 
     <p class="wow <?php block_field('paragraph-animation'); ?>" data-wow-delay="<?php block_field('paragraph-animation-delay'); ?>s"><?php echo block_field('paragraph'); ?></p>
