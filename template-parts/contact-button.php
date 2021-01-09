@@ -16,6 +16,6 @@
 		if (ICL_LANGUAGE_CODE == 'en') 
 			echo '<span>Сontact us</span>';
 		if (ICL_LANGUAGE_CODE == 'lv') 
-			echo '<span>Sazinātos ar mums</span>';
+			echo '<span>Sazināties ar mums</span>';
 	?>
 </button>

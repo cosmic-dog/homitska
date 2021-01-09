@@ -343,26 +343,38 @@ function twentytwenty_sidebar_registration() {
 		'after_widget'  => '</div></div>',
 	);
 
-	// Footer #1.
+	// Cities.
 	register_sidebar(
 		array_merge(
 			$shared_args,
 			array(
-				'name'        => __( 'Footer #1', 'twentytwenty' ),
+				'name'        => __( 'Cities', 'twentytwenty' ),
 				'id'          => 'sidebar-1',
-				'description' => __( 'Widgets in this area will be displayed in the first column in the footer.', 'twentytwenty' ),
+				'description' => __( 'This are is only for cities widgets(custom).', 'twentytwenty' ),
 			)
 		)
 	);
 
-	// Footer #2.
+	// Cookies
 	register_sidebar(
 		array_merge(
 			$shared_args,
 			array(
-				'name'        => __( 'Footer #2', 'twentytwenty' ),
+				'name'        => __( 'Cookies', 'twentytwenty' ),
 				'id'          => 'sidebar-2',
-				'description' => __( 'Widgets in this area will be displayed in the second column in the footer.', 'twentytwenty' ),
+				'description' => __( 'This are is only for cookies widget(custom).', 'twentytwenty' ),
+			)
+		)
+    );
+    
+    // Modals
+	register_sidebar(
+		array_merge(
+			$shared_args,
+			array(
+				'name'        => __( 'Modals', 'twentytwenty' ),
+				'id'          => 'sidebar-modals',
+				'description' => __( 'This are is only for modals widget(custom).', 'twentytwenty' ),
 			)
 		)
 	);
@@ -788,12 +800,10 @@ class Homitska_Lang_Walker extends Walker_Nav_Menu {
 		$permalink = $item->url;
 		$currentClass = in_array('current-lang', $item->classes) ? 'active' : '';
 
-		if ($item->type_label == 'Language switcher') {
-			$output .= '<li class="header_lang-li ' . $currentClass . '">';
-			$output .= '<a href="' . $permalink . '">';
-			$output .= $title;
-			$output .= '</a>';
-		}
+        $output .= '<li class="header_lang-li ' . $currentClass . '">';
+        $output .= '<a href="' . $permalink . '">';
+        $output .= $title;
+        $output .= '</a>';
 	}
 }
 
@@ -911,3 +921,276 @@ remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 
 // Disable REST API link in HTTP headers
 remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+
+
+// H Modal widget
+class modal_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct (
+            // Base ID of your widget
+            'modal_widget', 
+      
+            // Widget name will appear in UI
+            __('_H Modal', 'modal_widget_domain'), 
+      
+            // Widget description
+            array( 'description' => __( 'Homitska special modal widget', 'modal_widget_domain' ), ) 
+        );
+    }
+      
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        $title = $instance['title'];
+        $lead = $instance['lead'];
+        $modalID = $instance['modalID'];
+        $shortcode = $instance['shortcode'];
+
+        ?>
+        
+        <div class="block b-modal modal" id="<?php echo $modalID; ?>">
+            <svg class="modal-cross" viewBox="0 0 50 50"><path d="M1,1 l48,48 m-48,0 l48,-48"></path></svg>
+
+            <h3><?php echo $title; ?></h3>
+            <h4><?php echo $lead; ?></h4>
+        
+            <div class="b-modal-body">
+                <?php echo do_shortcode($shortcode); ?> 
+            </div>
+        </div>
+
+    <?php
+    }
+              
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ))
+            $title = $instance[ 'title' ];
+        else 
+            $title = __( 'New title', 'wpb_widget_domain' );
+
+        if (isset( $instance[ 'lead' ] )) 
+            $lead = $instance[ 'lead' ];
+        else 
+            $lead = '';
+
+        if (isset( $instance[ 'modalID' ] )) 
+            $modalID = $instance[ 'modalID' ];
+        else 
+            $modalID = '';
+
+        if (isset( $instance[ 'shortcode' ] )) 
+            $shortcode = $instance[ 'shortcode' ];
+        else 
+            $shortcode = '';
+
+        // Widget admin form
+        ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'lead' ); ?>">Lead:</label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'lead' ); ?>" name="<?php echo $this->get_field_name( 'lead' ); ?>" type="text" value="<?php echo esc_attr( $lead ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'modalID' ); ?>">Modal ID:</label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'modalID' ); ?>" name="<?php echo $this->get_field_name( 'modalID' ); ?>" type="text" value="<?php echo esc_attr( $modalID ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'shortcode' ); ?>">Form shortcode:</label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'shortcode' ); ?>" name="<?php echo $this->get_field_name( 'shortcode' ); ?>" type="text" value="<?php echo esc_attr( $shortcode ); ?>" />
+        </p>
+    <?php 
+    }
+          
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['lead'] = ( ! empty( $new_instance['lead'] ) ) ? strip_tags( $new_instance['lead'] ) : '';
+        $instance['modalID'] = ( ! empty( $new_instance['modalID'] ) ) ? strip_tags( $new_instance['modalID'] ) : '';
+        $instance['shortcode'] = ( ! empty( $new_instance['shortcode'] ) ) ? strip_tags( $new_instance['shortcode'] ) : '';
+        
+        return $instance;
+    }
+} 
+
+// H Cookies widget
+class cookies_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct (
+            // Base ID of your widget
+            'cookies_widget', 
+      
+            // Widget name will appear in UI
+            __('_H Cookies', 'cookies_widget_domain'), 
+      
+            // Widget description
+            array( 'description' => __( 'Homitska special cookies widget', 'cookies_widget_domain' ), ) 
+        );
+    }
+      
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        $text = $instance['text'];
+        $allowBtnLabel = $instance['allowBtnLabel'];
+        $declineBtnLabel = $instance['declineBtnLabel'];
+        ?>
+        
+        <div class="cookie-banner">
+	        <p><?php echo $text; ?></p>
+	        <div class="btn-wrap">
+  	        <button id="accept-cookies" class="trans btn-small"><span><?php echo $allowBtnLabel; ?></span></button>
+            <!-- a href="https://www.google.com/" class="btn trans btn-small"><span><?php echo $declineBtnLabel; ?></span></a -->
+ 	        </div>
+        </div>
+
+    <?php
+    }
+              
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ))
+            $title = $instance[ 'title' ];
+        else 
+            $title = __( 'New title', 'wpb_widget_domain' );
+
+        if (isset( $instance[ 'text' ] )) 
+            $text = $instance[ 'text' ];
+        else 
+            $text = '';
+
+        if (isset( $instance[ 'allowBtnLabel' ] )) 
+            $allowBtnLabel = $instance[ 'allowBtnLabel' ];
+        else 
+            $allowBtnLabel = '';
+
+        if (isset( $instance[ 'declineBtnLabel' ] )) 
+            $declineBtnLabel = $instance[ 'declineBtnLabel' ];
+        else 
+            $declineBtnLabel = '';
+
+        // Widget admin form
+        ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'text' ); ?>">Banner text:</label> 
+            <textarea class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>" name="<?php echo $this->get_field_name( 'text' ); ?>" style="min-height: 90px"><?php echo $text; ?></textarea>
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'allowBtnLabel' ); ?>">Allow Button Label:</label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'allowBtnLabel' ); ?>" name="<?php echo $this->get_field_name( 'allowBtnLabel' ); ?>" type="text" value="<?php echo esc_attr( $allowBtnLabel ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'declineBtnLabel' ); ?>">Decline Btn Label:</label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'declineBtnLabel' ); ?>" name="<?php echo $this->get_field_name( 'declineBtnLabel' ); ?>" type="text" value="<?php echo esc_attr( $declineBtnLabel ); ?>" />
+        </p>
+    <?php 
+    }
+          
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['text'] = ( ! empty( $new_instance['text'] ) ) ? $new_instance['text'] : '';
+        $instance['allowBtnLabel'] = ( ! empty( $new_instance['allowBtnLabel'] ) ) ? strip_tags( $new_instance['allowBtnLabel'] ) : '';
+        $instance['declineBtnLabel'] = ( ! empty( $new_instance['declineBtnLabel'] ) ) ? strip_tags( $new_instance['declineBtnLabel'] ) : '';
+        
+        return $instance;
+    }
+} 
+
+// H Cities widget
+class cities_widget extends WP_Widget {
+    function __construct() {
+        parent::__construct (
+            // Base ID of your widget
+            'cities_widget', 
+      
+            // Widget name will appear in UI
+            __('_H Cities', 'cookies_widget_domain'), 
+      
+            // Widget description
+            array( 'description' => __( 'Homitska special cities widget', 'cities_widget_domain' ), ) 
+        );
+    }
+      
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+        $cities = $instance['cities'];
+        $html = '<div class="footer-cities">';
+
+        if (!empty($cities)) {
+            $citiesArr = explode(',', $cities);
+
+            foreach ($citiesArr as $city) {
+                $html .= '<h5>' . trim($city) . '</h5>';
+            }
+        
+            $html .= '</div>';
+        
+            echo $html;
+        }
+    }
+              
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ))
+            $title = $instance[ 'title' ];
+        else 
+            $title = __( 'New title', 'wpb_widget_domain' );
+
+        if (isset( $instance[ 'cities' ] )) 
+            $cities = $instance[ 'cities' ];
+        else 
+            $cities = 'Enter cities separated by a comma';
+
+        // Widget admin form
+        ?>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'cities' ); ?>">Cities:</label> 
+            <textarea class="widefat" id="<?php echo $this->get_field_id( 'cities' ); ?>" name="<?php echo $this->get_field_name( 'cities' ); ?>" style="min-height: 90px"><?php echo $cities; ?></textarea>
+        </p>
+    <?php 
+    }
+          
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['cities'] = ( ! empty( $new_instance['cities'] ) ) ? $new_instance['cities'] : '';
+        
+        return $instance;
+    }
+} 
+     
+     
+// Register and load widgets
+function modal_load_widget() {
+    register_widget( 'modal_widget' );
+}
+add_action( 'widgets_init', 'modal_load_widget' );
+
+function cookies_load_widget() {
+    register_widget( 'cookies_widget' );
+}
+add_action( 'widgets_init', 'cookies_load_widget' );
+
+function cities_load_widget() {
+    register_widget( 'cities_widget' );
+}
+add_action( 'widgets_init', 'cities_load_widget' );
+
+
+

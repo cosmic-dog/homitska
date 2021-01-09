@@ -1,5 +1,6 @@
 H.form = (function() {
-    let cmButton = $('.contact-method a');
+    let cmButton = $('.contact-method a'),
+        phonetext = $('.wpcf7-phonetext');
 
     function contactMethod(e) {
         let btn = $(this),
@@ -7,7 +8,7 @@ H.form = (function() {
             numberField = parent.find('.twrap'),
             accField = parent.find('.taccount'),
             methodLabel = btn.find('span').text();
-        
+            
         e.preventDefault();
         btn.addClass('active').siblings().removeClass('active');
         parent.find('.tmethod').val(methodLabel);
@@ -20,6 +21,16 @@ H.form = (function() {
             numberField.hide();
             accField.show();
         }
+    }
+
+    function phonetextValidation(e) {
+        let key = e.keyCode || e.which;
+        
+        if ((key >= 48 && key <= 57) || key == 46 || key == 8 || (key >= 37 && key <=40)) {
+            // GO
+        }
+        else
+            e.preventDefault();
     }
 
     function wpcfFormAction() {
@@ -55,10 +66,18 @@ H.form = (function() {
             }
         }, false );
     };
+
+    function checkbox() {
+        $('.h-checkbox input').change(function() {
+            $(this).parent().toggleClass('checked');
+        });
+    };
     
     function init() {
         wpcfFormAction();
-        cmButton.click(contactMethod)
+        checkbox();
+        cmButton.click(contactMethod);
+        phonetext.keydown(phonetextValidation);
     }
 
     return {

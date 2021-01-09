@@ -29,16 +29,29 @@
 			?>
 		</nav>
 
+        <?php
+            if(is_active_sidebar('sidebar-1')){
+                dynamic_sidebar('sidebar-1');
+            }
+        ?>
+
 		<p class="footer-copyright">
 			&copy; <?php echo date('Y') ?> Elga Homitska
 		</p>
 	</footer>
 
-	<div class="overlay"></div>
-	
+    <div class="overlay"></div>
+    
 	<?php 
-		get_template_part( 'template-parts/modals' );
+        if(is_active_sidebar('sidebar-modals')){
+           dynamic_sidebar('sidebar-modals');
+        }
+        
+        if(is_active_sidebar('sidebar-2')){
+            dynamic_sidebar('sidebar-2');
+        }
+
 		wp_footer(); 
-	?>
+    ?>
 </body>
 </html>

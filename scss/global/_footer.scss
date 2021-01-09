@@ -76,6 +76,37 @@
         color: $text-color-light;
         border-top: 1px solid $border-color;
     }
+
+    &-cities {
+        color: $text-color-light;
+        padding: 0 20px 14px 20px;
+
+        h5 {
+            display: inline-block;
+            padding: 0;
+            position: relative;
+            font-weight: 400;
+            font-style: 16px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+            padding-left: 14px;
+
+            &:before {
+                width: 6px;
+                height: 6px;
+                content: '';
+                border-radius: 50%;
+                background: $text-color-light;
+                position: absolute;
+                top: 6px;
+                left: 0;
+            }
+        }
+    }
+}
+
+.widget-title {
+    display: none;
 }
 
 @include mq-1300 {

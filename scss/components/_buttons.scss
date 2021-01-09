@@ -52,6 +52,11 @@ button, .btn {
         padding-right: 38px;
     }
 
+    &-bold {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
     span {
         position: relative;
         vertical-align: middle;
