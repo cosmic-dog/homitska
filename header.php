@@ -14,7 +14,8 @@
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="yandex-verification" content="ff146adcd29e0350">
 
 		<?php wp_head(); ?>
 
