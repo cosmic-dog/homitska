@@ -30,7 +30,7 @@ foreach ($textArr as $el) {
     </ul>
     <p class="b-product-highlights"><?php block_field( 'highlights' ); ?></p>
     <div class="b-product-btn-wrap">
-        <button class="b-product-buy-btn btn-bold" role="button" data-buy-url="<?php block_field( 'url' ); ?>">
+        <button class="b-product-buy-btn product-buy-btn btn-bold" role="button" data-buy-url="<?php block_field( 'url' ); ?>">
             <span><?php block_field( 'price' ); ?></span>
         </button>
     </div>
