@@ -19,12 +19,12 @@ button, .btn {
         color: $bg-color;
         background: $btn-bg;
 
+        &:after {
+            background: $bg-color;
+        }
+
         &:not([disabled]):not(.disabled):hover {
             color: $text-color;
-
-            &:after {
-                background: $bg-color;
-            }
         }
     }
 
@@ -77,7 +77,7 @@ button, .btn {
         @include btn-animation;
     }
 
-    &:hover {
+    &:not([disabled]):not(.disabled):hover {
         &:after {
             width: 100%;
         }
