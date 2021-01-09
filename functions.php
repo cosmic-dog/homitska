@@ -842,6 +842,11 @@ class Homitska_Footer_Walker extends Walker_Nav_Menu {
 				$output .= $title;
 				$output .= '</span>';
 			}
+			else if ($permalink == '') {
+				$output .= '<em>';
+				$output .= $title;
+				$output .= '</em>';
+			}
 			else if ($isSocialMenu) {
 				$output .= wp_nav_menu(
 					array(

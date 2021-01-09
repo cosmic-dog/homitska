@@ -24,24 +24,24 @@ if (!empty($bgColor)) {
             <div class="h-checkbox">
                 <input type="checkbox" value="consent" />
             </div>
-            <a href="<?php block_field('consent-one-link'); ?>"><?php block_field('consent-one-text'); ?></a>
+            <a href="<?php block_field('consent-one-link'); ?>" target="_blank"><?php block_field('consent-one-text'); ?></a>
         </li>
         <li>
             <div class="h-checkbox">
                 <input type="checkbox" value="consent" />
             </div>
-            <a href="<?php block_field('consent-two-link'); ?>"><?php block_field('consent-two-text'); ?></a>
+            <a href="<?php block_field('consent-two-link'); ?>" target="_blank"><?php block_field('consent-two-text'); ?></a>
         </li>
         <li>
             <div class="h-checkbox">
                 <input type="checkbox" value="consent" />
             </div>
-            <a href="<?php block_field('consent-three-link'); ?>"><?php block_field('consent-three-text'); ?></a>
+            <a href="<?php block_field('consent-three-link'); ?>" target="_blank"><?php block_field('consent-three-text'); ?></a>
         </li>
     </ul>
 
     <div class="btn-wrap">
-        <a href="#" class="btn consent-btn"><span><?php block_field('button-text'); ?></span></a>
+        <a href="#" class="btn consent-btn disabled" target="_blank"><span><?php block_field('button-text'); ?></span></a>
         <p class="link-tip"><?php block_field('tip'); ?></p>
     </div>
 </div>

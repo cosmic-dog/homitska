@@ -11,14 +11,16 @@
     li {
         text-align: left;
         list-style-type: none;
+
+        em {
+            font-style: normal;
+        }
     }
 
-    a:not(.social-link), span {
+    a:not(.social-link), span, em {
         letter-spacing: 0;
         font-size: .9em;
         color: $text-color-light;
-
-       
     }
 
     a:hover {
@@ -61,11 +63,6 @@
 
         li {
             margin-top: 8px;
-        }
-
-        a:not(.social-link) {
-            font-size: .9em;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
     }
 

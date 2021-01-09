@@ -19,12 +19,12 @@ button, .btn {
         color: $bg-color;
         background: $btn-bg;
 
-        &:after {
-            background: $bg-color;
-        }
-
-        &:not([disabled]):hover {
+        &:not([disabled]):not(.disabled):hover {
             color: $text-color;
+
+            &:after {
+                background: $bg-color;
+            }
         }
     }
 
@@ -43,8 +43,9 @@ button, .btn {
         }
     }
 
-    &[disabled] {
+    &[disabled], &.disabled {
         opacity: .7;
+        cursor: not-allowed;
     }
 
     &-small {
