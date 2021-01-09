@@ -17,9 +17,11 @@
 .gt3pg_pro_title_wrap { 
         .gt3pg_pro_title {
             font-family: $font-family !important;
+            font-weight: 300 !important;
         }
         .gt3pg_pro_description {
             font-family: $font-family;    
+            font-weight: 300;
             color: #999;
             font-size: 18px;
         }

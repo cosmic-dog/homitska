@@ -27,71 +27,9 @@
     font-style: normal; }
   
   
-  @font-face {
-      font-family: "Proxima Cond thin";
-      src: url(../fonts/proxima/Proxima-Nova-condensed-thin.otf) format("opentype");
-      font-weight: 400;
-      font-style: normal;
-  }
-  
-  @font-face {
-      font-family: Roboto;
-      src: url(../fonts/roboto/Roboto-light.ttf) format("truetype");
-      src: url(../fonts/roboto/Roboto-light.woff) format('woff');
-      font-weight: 400;
-      font-style: normal;
-  }
-  
-  @font-face {
-      font-family: Roboto;
-      src: url(../fonts/roboto/Roboto-medium.ttf) format("truetype");
-      src: url(../fonts/roboto/Roboto-medium.woff) format('woff');
-      font-weight: 500;
-      font-style: normal;
-  }
-  
-
-  /*
 @font-face {
-  font-family: "Times";
-  src: url("http://homitska.com/static/elga_app/fonts/Times Bold.ttf");
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Times";
-  src: url("http://homitska.com/static/elga_app/fonts/times new roman.ttf");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Proxima Cond thin";
-  src: url("http://homitska.com/static/about/css/../fonts/Proxima Nova Condensed Thin.otf");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Proxima Cond light";
-  src: url("http://homitska.com/static/elga_app/fonts/Proxima Nova Condensed Light.otf");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "times new roman";
-  src: url("http://homitska.com/static/elga_app/fonts/times-new-roman-italique.ttf");
-  font-weight: 400;
-  font-style: italic; }
-
-@font-face {
-  font-family: "times new roman";
-  src: url("http://homitska.com/static/elga_app/fonts/times new roman.ttf");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "times new roman";
-  src: url("http://homitska.com/static/elga_app/fonts/times new roman bold.ttf");
-  font-weight: 600;
-  font-style: normal; }
-
-  */
+    font-family: "Proxima Cond thin";
+    src: url(../fonts/proxima/Proxima-Nova-condensed-thin.otf) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
