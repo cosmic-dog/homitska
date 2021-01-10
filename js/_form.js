@@ -1,7 +1,8 @@
 H.form = (function() {
     let cmButton = $('.contact-method a'),
-        phonetext = $('.wpcf7-phonetext');
-
+        phonetext = $('.wpcf7-phonetext'),
+        language = H.assets.getLanguage();
+    
     function contactMethod(e) {
         let btn = $(this),
             parent = btn.parents('.form-row'),
@@ -25,8 +26,8 @@ H.form = (function() {
 
     function phonetextValidation(e) {
         let key = e.keyCode || e.which;
-        
-        if ((key >= 48 && key <= 57) || key == 46 || key == 8 || (key >= 37 && key <=40)) {
+        console.log(key);
+        if ((key >= 48 && key <= 57) || (key >= 96 && key <=105) || key == 46 || key == 8 || (key >= 37 && key <=40)) {
             // GO
         }
         else
@@ -48,7 +49,10 @@ H.form = (function() {
                 });
             }
 
-            window.location = '/spasibo/';
+            if (language == 'ru')
+                window.location = '/spasibo/';
+            if (language == 'lv')
+                window.location = '/paldies/'
         }, false );
         
         document.addEventListener( 'wpcf7mailfailed', function( event ) {
@@ -64,6 +68,11 @@ H.form = (function() {
                     formName: formNameHolder.data('formname')
                 });
             }
+
+            if (language == 'ru')
+                window.location = '/oshibka-registracii/';
+            if (language == 'lv')
+                window.location = '/registracijas-kluda/'
         }, false );
     };
 

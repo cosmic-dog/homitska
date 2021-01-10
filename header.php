@@ -33,7 +33,7 @@
 		<!-- End Google Tag Manager -->
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> data-language="<?php echo ICL_LANGUAGE_CODE; ?>">
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTQ7DTL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->

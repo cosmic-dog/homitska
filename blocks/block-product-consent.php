@@ -17,7 +17,7 @@ if (!empty($bgColor)) {
 ?>
 
 <div class="block b-product-consent product-consent middle <?php echo $bgColorClass; ?>">
-    <h4 class="lead"><?php block_field('text'); ?></h4>
+    <h4><?php block_field('text'); ?></h4>
 
     <ul>
         <li>

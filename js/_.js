@@ -14,5 +14,9 @@ H.assets = {
             $('body').css('overflow', 'unset').css('padding-right', 0);
         else
             $('body').css('overflow', 'hidden').css('padding-right', scrollWitdh);
+    },
+
+    getLanguage: function() {
+        return $('body').data('language');
     }
 }
