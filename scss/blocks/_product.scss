@@ -50,13 +50,12 @@ $produck-padding: 14px;
     }
 
     &-btn-wrap {
-        //width: 100%;
         position: absolute;
         left: $produck-padding;
         bottom: $produck-padding;
         right: $produck-padding;
 
-        button {
+        button, .btn {
             width: 100%;
             text-align: center;
         }
@@ -122,25 +121,3 @@ $produck-padding: 14px;
         }
     }
 }
-
-// @include mq-560 {
-//     .b-product{
-//         &-blocks {
-//             &-header {
-//                 h4 {
-//                     max-width: 126px;
-
-//                     &:nth-child(2) {
-//                         text-align: right;
-//                     }
-//                 }
-//             }
-            
-//             &-total {
-//                 button {
-//                     width: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }

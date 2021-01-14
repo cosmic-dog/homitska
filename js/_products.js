@@ -1,5 +1,5 @@
 H.products = (function() { 
-    let buyBtn = $('.product-buy-btn'),
+    let buyBtn = $('button.product-buy-btn'),
         consent = $('.product-consent'),
         consentBoxes = consent.find('input[type="checkbox"]'),
         consentBtn = $('.consent-btn');

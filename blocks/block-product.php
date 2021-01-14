@@ -11,6 +11,7 @@
 $text = block_field( 'list', false );
 $text = str_replace('<p>', '', $text);
 $textArr = explode('</p>', $text);
+$openConsent = block_field('open-consent-block', false);
 $html = '';
 
 array_pop($textArr);
@@ -30,8 +31,14 @@ foreach ($textArr as $el) {
     </ul>
     <p class="b-product-highlights"><?php block_field( 'highlights' ); ?></p>
     <div class="b-product-btn-wrap">
-        <button class="b-product-buy-btn product-buy-btn btn-bold" role="button" data-buy-url="<?php block_field( 'url' ); ?>">
-            <span><?php block_field( 'price' ); ?></span>
-        </button>
+        <?php if ($openConsent) : ?>
+            <button class="b-product-buy-btn product-buy-btn btn-bold" role="button" data-buy-url="<?php block_field( 'url' ); ?>">
+                <span><?php block_field( 'price' ); ?></span>
+            </button>
+        <?php else : ?>
+            <a class="btn b-product-buy-btn product-buy-btn btn-bold" href="<?php block_field( 'url' ); ?>" target="_blank">
+                <span><?php block_field( 'price' ); ?></span>
+            </a>
+        <?php endif ?>
     </div>
 </div>
