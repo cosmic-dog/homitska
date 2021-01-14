@@ -55,7 +55,7 @@
             height: 200px !important;
             outline: none;
             transform: translateY(-36%);
-            border: 0;
+            border: 0;    
             @include font-awesome;
             font-size: 46px;
 
@@ -64,9 +64,11 @@
             }
 
             &:before {
-                position: absolute;
-                top: 70px;
+                color: #000 !important;
                 opacity: .7;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             &:after {
