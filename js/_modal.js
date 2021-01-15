@@ -7,9 +7,16 @@ H.modal = (function() {
     };
 
     function modalOpen(e) {
-        let modal = $(this).data('modal');
+        let modal;
         
-        e.preventDefault();
+        if (e.type) {
+            e.preventDefault();
+            modal = $(this).data('modal');
+        }
+        else {
+            modal = e;
+        }
+
         H.assets.disableScroll();
         $('.overlay').fadeIn(200);
         $('#' + modal).fadeIn(300);
@@ -21,6 +28,7 @@ H.modal = (function() {
     };
     
     return {
-        init: init
+        init: init,
+        modalOpen: modalOpen
     }
 })();

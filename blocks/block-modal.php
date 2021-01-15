@@ -1,6 +1,6 @@
 <?php
 /**
- * Block for displaying Map
+ * Block for displaying Modal
  *
  *
  * @package WordPress
